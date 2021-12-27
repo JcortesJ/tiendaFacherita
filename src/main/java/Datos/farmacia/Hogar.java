@@ -52,6 +52,20 @@ public class Hogar extends Farmacia {
     private boolean biodegradable;
     private String modoDeUso;
 
+      @Override
+    public String toString() {
+        String gen = this.isQuimico()? "SI":"NO";
+        String gen2 = this.isBiodegradable()? "SI":"NO";
+        String info_farmacia = super.toString(); 
+        String info_hogar = info_farmacia + " Modo de uso: "  + this.getModoDeUso()+ "\n" +
+                 "Es quimico: " + gen2 + "\n" 
+                 + "Es biodegradable: " + gen + "\n" ;
+        
+        return  info_hogar; 
+//To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
