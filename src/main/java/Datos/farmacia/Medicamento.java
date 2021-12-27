@@ -48,11 +48,12 @@ public class Medicamento extends Farmacia {
     private boolean generica;
     private String frecuencia;
 
-    public Medicamento(String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia) {
-        this.fechaVencimiento = fechaVencimiento;
-        this.contraindicaciones = contraindicaciones;
-        this.generica = generica;
-        this.frecuencia = frecuencia;
+    public Medicamento() {
+        super();
+        this.fechaVencimiento = "13/13/2013";
+        this.contraindicaciones = "ninguna";
+        this.generica = false;
+        this.frecuencia = "ninguna";
     }
 
     public Medicamento(String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
@@ -67,8 +68,15 @@ public class Medicamento extends Farmacia {
 
     @Override
     public String toString() {
-        
-        return super.toString(); //To change body of generated methods, choose Tools | Templates.
+        String gen = this.isGenerica()? "SI":"NO";
+        String info_farmacia = super.toString(); 
+        String info_medicamento = info_farmacia + "Fecha vencimiento: " + this.getFechaVencimiento() + "\n" +
+                 "Contraindicaciones:" + this.getContraindicaciones()+ "\n" +
+                 "Frecuencia:  " + this.getFrecuencia()+ "\n" +
+                 "Fecha vencimiento " + this.getFechaVencimiento() + "\n" +
+                "Es generico: " + gen + "\n" ;
+        return  info_medicamento; 
+//To change body of generated methods, choose Tools | Templates.
     }
     
     
