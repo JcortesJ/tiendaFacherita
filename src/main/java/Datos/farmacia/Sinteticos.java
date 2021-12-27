@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
+ */
+package Datos.farmacia;
+
+/**
+ *
+ * @author juan manuel
+ */
+public class Sinteticos extends Farmacia {
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
+
+    public boolean isImportado() {
+        return importado;
+    }
+
+    public void setImportado(boolean importado) {
+        this.importado = importado;
+    }
+
+    public String getDuracionTratamiento() {
+        return duracionTratamiento;
+    }
+
+    public void setDuracionTratamiento(String duracionTratamiento) {
+        this.duracionTratamiento = duracionTratamiento;
+    }
+
+    public Sinteticos() {
+        super();
+        this.fabricante = "ninguno";
+        this.importado = false;
+        this.duracionTratamiento = "0 meses";
+    }
+
+    public Sinteticos(String fabricante, boolean importado, String duracionTratamiento, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+        this.fabricante = fabricante;
+        this.importado = importado;
+        this.duracionTratamiento = duracionTratamiento;
+    }
+    
+    private String fabricante;
+    private boolean importado;
+    private String duracionTratamiento;
+
+    
+      @Override
+    public String toString() {
+        String gen = this.isImportado()? "SI":"NO";
+        String info_farmacia = super.toString(); 
+        String info_sint = info_farmacia + "Fabricante " + this.getFabricante() + "\n" +
+                 "Duracion tratamiento:" + this.getDuracionTratamiento()+ "\n" +
+                "Es importado: " + gen + "\n" ;
+        return  info_sint; 
+//To change body of generated methods, choose Tools | Templates.
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        // TODO code application logic here
+    }
+}
