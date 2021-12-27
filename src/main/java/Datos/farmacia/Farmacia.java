@@ -2,7 +2,7 @@
 package Datos.farmacia;
 import Datos.*;
 
-public class Farmacia extends Producto {
+public  abstract class Farmacia extends Producto {
 
     
     
