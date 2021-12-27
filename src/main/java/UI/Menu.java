@@ -7,12 +7,12 @@ public class Menu {
 
     public String BuscarCadena(String buscando, String recurso){
         char[] recursoArray = recurso.toCharArray();
-    
+     return "xd";
     }
     
     public String Buscar(String caracter, ArrayList<Object> repo){
         int i = 0;
-        
+        return "xd";
     }
 
     public void MostrarMain(){
