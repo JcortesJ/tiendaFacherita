@@ -67,14 +67,6 @@ final public class Cerveza extends Bebida{
         return cad;
     }
     
-    @Override
-    public final float valorTotalProducto(int cantidad){
-       return 0;
-    }
-    
-    @Override
-    public final float promocion(int cantidad){
-        return 0;
-    }
+ 
     
 }

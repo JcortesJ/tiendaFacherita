@@ -61,6 +61,8 @@ final public class Hogar extends Farmacia {
 
     }
     
+     //OVERRIDE DE METODOS ABSTRACTOS
+    
     @Override
     public final float valorTotalProducto(int cantidad){
        return super.getPrecio();

@@ -3,6 +3,10 @@ package Datos.farmacia;
 
 
 final public class Sinteticos extends Farmacia {
+    
+      private String fabricante;
+    private boolean importado;
+    private String duracionTratamiento;
 
     public String getFabricante() {
         return fabricante;
@@ -42,9 +46,7 @@ final public class Sinteticos extends Farmacia {
         this.duracionTratamiento = duracionTratamiento;
     }
     
-    private String fabricante;
-    private boolean importado;
-    private String duracionTratamiento;
+  
 
     
       @Override
@@ -57,6 +59,8 @@ final public class Sinteticos extends Farmacia {
         return  info_sint; 
 
     }
+    
+     //OVERRIDE DE METODOS ABSTRACTOS
     
     @Override
     public final float valorTotalProducto(int cantidad){

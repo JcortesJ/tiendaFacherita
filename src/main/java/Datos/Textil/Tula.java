@@ -47,14 +47,6 @@ final public class Tula extends Maletin {
         return (cadena + "gama=" + gama + ", personalizado=" + personalizado + ", correas=" + correas);
     }
     
-    @Override
-    public final float valorTotalProducto(int cantidad){
-       return 0;
-    }
     
-    @Override
-    public final float promocion(int cantidad){
-        return 0;
-    }
     
 }

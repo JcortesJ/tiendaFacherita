@@ -3,6 +3,10 @@ package Datos.farmacia;
 
 
 final public class Naturales extends Farmacia {
+    
+    private String ingredientes;
+    private String beneficios;
+    private String origen;
 
     public Naturales() {
         super();
@@ -18,9 +22,7 @@ final public class Naturales extends Farmacia {
         this.origen = origen;
     }
     
-    private String ingredientes;
-    private String beneficios;
-    private String origen;
+    
     
 
     public String getIngredientes() {
@@ -56,6 +58,8 @@ final public class Naturales extends Farmacia {
                 " Ingredientes: " + this.getIngredientes() + "\n" ;
         return  info_natu; 
     }
+    
+     //OVERRIDE DE METODOS ABSTRACTOS
     
     @Override
     public final float valorTotalProducto(int cantidad){

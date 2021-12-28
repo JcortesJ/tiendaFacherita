@@ -47,14 +47,6 @@ final public class Sombrero extends Ropa{
         return (cadena + "tradicional=" + tradicional + ", tipo=" + tipo + ", proceso=" + proceso);
     }
     
-    @Override
-    public final float valorTotalProducto(int cantidad){
-       return 0;
-    }
-    
-    @Override
-    public final float promocion(int cantidad){
-        return 0;
-    }
+   
     
 }

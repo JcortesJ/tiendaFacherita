@@ -3,6 +3,11 @@ package Datos.farmacia;
 
 
 final public class Personal extends Farmacia {
+    
+    private int edadRecomendada;
+    private String zonaCuerpo;
+    private boolean unisex;
+    
 
     public int getEdadRecomendada() {
         return edadRecomendada;
@@ -42,10 +47,7 @@ final public class Personal extends Farmacia {
         this.unisex = unisex;
     }
     
-    private int edadRecomendada;
-    private String zonaCuerpo;
-    private boolean unisex;
-    
+ 
         @Override
     public String toString() {
         String gen = this.isUnisex()? "SI":"NO";
@@ -57,12 +59,14 @@ final public class Personal extends Farmacia {
 
     }
     
+     //OVERRIDE DE METODOS ABSTRACTOS
+    
     @Override
     public final float valorTotalProducto(int cantidad){
       float presio_final = super.getPrecio();
         if(this.isUnisex()==false){
             presio_final *= 1.05;
-            super.setPrecio(presio_final);//el precio subirá un 105%
+            super.setPrecio(presio_final);//el precio subirá un 5%
         }
       
        return presio_final;
