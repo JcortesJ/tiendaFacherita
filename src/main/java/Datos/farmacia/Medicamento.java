@@ -47,7 +47,7 @@ final public class Medicamento extends Farmacia {
         this.frecuencia = "ninguna";
     }
 
-    public Medicamento(String caducidad ,String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+    public Medicamento(String caducidad , String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
         super(caducidad ,contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         
         this.contraindicaciones = contraindicaciones;
