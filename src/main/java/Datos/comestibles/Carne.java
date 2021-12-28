@@ -1,7 +1,7 @@
 
 package Datos.comestibles;
 
-public class Carne extends Refrigerado{
+final public class Carne extends Refrigerado{
     
     private String corteAnimal;
     private boolean importado;
@@ -91,4 +91,6 @@ public class Carne extends Refrigerado{
         + " Tipo de carne: " + this.tipo;
         return cad;
     }
+    
+  
 }

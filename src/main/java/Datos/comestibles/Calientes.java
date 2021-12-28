@@ -1,8 +1,11 @@
 
 package Datos.comestibles;
 
+
 import java.lang.Math;
-public class Calientes extends Bebida{
+
+final public class Calientes extends Bebida{
+
     
     private boolean tradicional;
     private float nivelAzucar;
@@ -116,4 +119,6 @@ public class Calientes extends Bebida{
         return cad;
         
     }
+    
+   
 }

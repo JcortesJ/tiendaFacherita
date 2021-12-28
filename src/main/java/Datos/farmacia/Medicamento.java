@@ -1,17 +1,17 @@
 
 package Datos.farmacia;
-import Datos.*;
 
 
-public class Medicamento extends Farmacia {
 
-    public String getFechaVencimiento() {
-        return fechaVencimiento;
-    }
 
-    public void setFechaVencimiento(String fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
-    }
+final public class Medicamento extends Farmacia {
+
+    
+    private String contraindicaciones;
+    private boolean generica;
+    private String frecuencia;
+    
+    
 
     public String getContraindicaciones() {
         return contraindicaciones;
@@ -37,22 +37,19 @@ public class Medicamento extends Farmacia {
         this.frecuencia = frecuencia;
     }
     
-    private String fechaVencimiento;
-    private String contraindicaciones;
-    private boolean generica;
-    private String frecuencia;
+ 
 
     public Medicamento() {
         super();
-        this.fechaVencimiento = "13/13/2013";
+       
         this.contraindicaciones = "ninguna";
         this.generica = false;
         this.frecuencia = "ninguna";
     }
 
-    public Medicamento(String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
-        this.fechaVencimiento = fechaVencimiento;
+    public Medicamento(String caducidad , String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(caducidad ,contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+        
         this.contraindicaciones = contraindicaciones;
         this.generica = generica;
         this.frecuencia = frecuencia;
@@ -64,12 +61,34 @@ public class Medicamento extends Farmacia {
     public String toString() {
         String gen = this.isGenerica()? "SI":"NO";
         String info_farmacia = super.toString(); 
-        String info_medicamento = info_farmacia + "Fecha vencimiento: " + this.getFechaVencimiento() + "\n" +
+        String info_medicamento = info_farmacia + "\n" +
                  "Contraindicaciones:" + this.getContraindicaciones()+ "\n" +
                  "Frecuencia:  " + this.getFrecuencia()+ "\n" +
-                 "Fecha vencimiento " + this.getFechaVencimiento() + "\n" +
+                 
                 "Es generico: " + gen + "\n" ;
         return  info_medicamento; 
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       float presio_final = super.getPrecio();
+        if(this.isGenerica()){
+            presio_final *= .80;
+            super.setPrecio(presio_final);//el precio tendra descuento del 20%
+        }
+      
+       return presio_final;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        float presio_final = super.getPrecio();
+        if(cantidad>3){
+            presio_final *= .90;
+            super.setPrecio(presio_final);//el precio tendra un descuento del 90%
+        }
+      
+       return presio_final;
     }
     
     

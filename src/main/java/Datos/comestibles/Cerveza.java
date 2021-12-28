@@ -3,7 +3,9 @@ package Datos.comestibles;
 
 import java.util.ArrayList;
 
-public class Cerveza extends Bebida{
+
+final public class Cerveza extends Bebida{
+
     
     private float gradoAlcohol;
     private String ingredientes;
@@ -36,7 +38,7 @@ public class Cerveza extends Bebida{
     
     @Override
     
-    public float valorTotalProducto(int cantidad){
+    public final float valorTotalProducto(int cantidad){
         
         float precio = this.getPrecio();
         float precioSix = precio - 600;
@@ -58,7 +60,7 @@ public class Cerveza extends Bebida{
     
     @Override
     
-    public float promocion(int cantidad){     
+    public final float promocion(int cantidad){     
         float precio = valorTotalProducto(cantidad); 
         
         if (cantidad >= 120) {
@@ -133,5 +135,7 @@ public class Cerveza extends Bebida{
                 this.ingredientes + " Tipo de fermentación: "+ this.tipoFermentacion;
         return cad;
     }
+    
+ 
     
 }
