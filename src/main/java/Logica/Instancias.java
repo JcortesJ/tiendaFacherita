@@ -1,15 +1,107 @@
 
 package Logica;
-import Datos.Textil.Chaqueta;
-import Datos.Textil.Morral;
-import Datos.Textil.Sombrero;
-import Datos.Textil.Tula;
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import Datos.comestibles.*;
+import Datos.Textil.*;
+import Datos.farmacia.*;
+//import Datos.Producto;
+
+
+
+
 
 public class Instancias {
+    //objetos de farmacia del 500 al 1000
+    //Aseo
+    static Aseo aseo_1 = new Aseo("12/02/21", "Agua, glicerol, jabon", "No aplicar a los ojos", false, 500, "ninguna", "desinfeccion de superficies",567 , "Desinfetec", "E corp", (float) 23.440, "Producto autoctono usado para limpiar superficies");
+    static Aseo aseo_2 = new Aseo("3/05/22", "Agua, NaClO, Blanqueador ", "No usar en ropa", true, 200, "No mezclar con alcohol", "desinfeccion para covid19", 570, "Clor-EP", "Aguas del oriente", (float)15.000, "Producto usado para limpiar y prevenir el covid en el hogar");
+    static Aseo aseo_3 = new Aseo("Ninguna", "Agua, aromatizante, grasa no humana", "No dejar en el agua", false, 250, "ninguna", "aplique sobre manos y superficies", 580, "Jabon NaCl", "Limpio SA", (float)3.000, "Usese para limpiar y dejar un buen olor");
+    //Hogar
+     static Hogar hogar_1 = new Hogar("12/02/23",false, true,"Usar en el lavado de ropa", 1000, "menores de 10 anos no usar", "detergente para ropa", 590, "Fabuloso", "Bandamax", (float) 30.000,"jabon limpiador de ropa" );
+    static Hogar hogar_2 = new Hogar("3/01/29", true, false, "Dejar en sitios donde haya roedores", 50, "Evite que menores lo usen", "Veneno para roedores", 599, "El-matador", "Limpio SA", (float)45.000, "Veneno para matar roedores");
+    static Hogar hogar_3 = new Hogar("Ninguna", false, true, "Aplicar en zonas donde huela mal", 450, "no aplicar a ojos, inflamable", "Aromatiza el hogar", 600, "Huele-bien", "Olores del cielo SA", (float)10.000, "Aromatice su casa a un costo accequible");
+    
+    //Medicamento
+    static Medicamento med_1 = new Medicamento("9/03/25", "Hipersensibilidad al paracetamol", true, "cada 8h", 40, "No usar personas con problemas renales", "medicamento paliativo", 620, "Dolex-EP", "Quimicos reinsertados SA", (float)2.500, "Usese para curar pequenios dolores");
+    static Medicamento med_2 = new Medicamento("10/04/23", "Riesgo de  ataques cardiacos", false, "cada 12h", 30, "No usar si ha tenido un ataque cardiaco reciente", "medicamento paliativo", 605, "Ibuprofex", "Quimicos reinsertados SA", (float)5.000, "Usese para curar pequenios dolores");
+    static Medicamento med_3 = new Medicamento("28/12/21", "Riesgo de ulceras", true, "cada 12h", 10, "No usar si es alegico, o hemofilico","medicamento anfiinflamatorio", 610, "Aspirin-LP", "Quimicos reinsertados SA", (float)9.000, "Usese como antiinflamatorio o anticoagulante");
+    
+    //Naturales
+    static Naturales nat_1 = new Naturales("ninguna", "canabbis, hoja de coca, calendula", "alivia todo tipo de dolores", "selvas del cauca", 300, "ninguna", "aplique sobre el area inflamada", 630, "mariguanol", "aguas del oriente", (float)35.000, "Pomada caliente para calmar dolores");
+    static Naturales nat_2 = new Naturales();
+    static Naturales nat_3 = new Naturales("un dia despues de su venta","receta secreta del chaman", "relajacion instantanea", "selvas del yari", 450, "menores de 18 anios", "infusion en el agua", 640, "Te magico", "Te SA", (float)10.000, "Te de hierbas nativas para relajarse");
+    
+    //Personal
+    
+    static  Personal per_1 = new Personal("ninguna", 5, "boca", true, 50, "ninguna", "Limpieza bucal", 650, "Oral-F","Bandamax", (float)3.000, "Uselo para limpiar su boca");
+    static  Personal per_2 = new Personal("ninguna", 15, "todo el cuerpo", true, 80, "ninguna", "limpieza del cuerpo", 655, "EsponjAAB", "Bandamax", (float)3.500, "Uselo para baniarse y limpiarse");
+    static  Personal per_3 = new Personal("2025", 25, "zona intima", false, 110, "hipersensibilidad a las toallas", "toallas intimas", 670,"Klotex", "Bandamax", (float)4.000, "Toallas intimas");
+    
+    //Sinteticos
+    static Sinteticos sin_1 = new Sinteticos("ninguna", "Jhonson&Jhonson", true,"2 minutos de aplicacion", 200,"sensibilidad al producto", "Aplique sobre cabello remojado y enjuage", 700, "Shampoo anticaida", "Internacional-Importaciones SA", (float)15.000, "Shampoo anti: caida,caspa,resequedad");
+    static Sinteticos sin_2 = new Sinteticos("10/07/29", "Dago Garcia Aceites", false, "de 2 a 3 dias", 250, "ninguna", "Aplique sobre el area a masajear", 705, "Aceite masajeador", "DGA SA", (float) 45.000, "Aceite especial para masajes");
+    static Sinteticos sin_3 = new Sinteticos("ninguna", "Aguas del oriente SA", true, "Hasta que desaparezcan las imperfecciones", 300, "ninguna", "Limpieza facial", 710, "Agua micelar", "E corp", (float)7.500, "Agua micelar para la cara");
+
+    // CERVEZAS
+    static Cerveza laRoja = new Cerveza(5.5f, "Lúpulo, malta, agua, levadura", "Ale", 550f, "Vidrio", true, "No determina", 1f, 198, 43f, 1001, "LaRoja-Clasica", "LaRoja", 7000, "Cerveza tipo red ALe con buen balance entre malta y lupulo, sabor intenso");
+    
+    static Cerveza alternativa = new Cerveza(4.5f, "Malta tostada, lúpulo, agua, levadura",
+    "Ale", 350f, "Vidrio", true, "No determina", 0.75f, 150, 40f, 1002, "Alternativa",
+    "Cervecería alternativa", 6500, "Cerveza negra tipo ale, suave con un cuerpo fuerte");
+    
+    static Cerveza laTrocha = new Cerveza(5.5f, "Lúpulo, malta tostada, caramelo, chocolate, agua",
+    "Ale", 550f, "Vidrio", true, "No determina", 0.8f, 120, 45f, 1003, "Coromoro Ale Porter", 
+    "La Trocha", 10900f, "Coromoro Ale Porter es una cerveza negra de un amargor medio con tintes a chocolate y a acaramelo");
+
+    // BEBIDAS CALIENTES
+    
+    static Calientes cafeParamillo = new Calientes(true, 0f, false, 2500f, "Bolsa", true, "No determina",
+    1f, 90, 5f, 2001, "Cafe Paramillo", "Cooperativa Multiactiva emprendedores del campo Colombiano",
+    35000f, "Cafe de grano 100% natural y con la calidad del campo Colombiano");
+    
+    static Calientes cafeTercerAcuerdo = new Calientes(true, 0f, false, 2000f, "Bolsa", true, "No determina",
+    0.8f, 110, 3f, 2002, "Cafe el Tercer Acuerdo", "ASOPEP",
+    28000f, "El Tercer Acuerdo es el café de lo colectivo, del pacto local que hacen las antiguas FARC-EP y los indigenas Nasa en el corregimiento de Gaitana-Tolima");
+
+    static Calientes chocolateLaPaz = new Calientes(true, 48.5f, false, 1500f, "Bolsa",
+    true, "12 meses", 1.5f, 60, 546f, 2003, "Chocolate La paz", "Cooperativa Fronteras del sur",
+    45000f, "Café 100% natural proveniente del campo Colombiano, sabor amargo y placentero");
+    
+    // Carnes
+    
+    static Carne carneBufalo = new Carne("Chuletón", false, "Carnes rojas", 1.5f, "Búfalo",
+    30, "4 a 12 meses", 1.5f, 45, 99, 30001, "Chuletón de Búfalo", "Ecobúfalo", 30500f,
+    "Carne de Búfalo proveniente del área de reincorporación San Francisco, ubicada en Yondó, Antioquia");
+
+    static Carne carneCerdo = new Carne("Lomo", false, "Carnes blancas", 2f, "Cerdo", 25,
+    "4 a 12 meses", 1f, 34, 242, 3002, "Lomo de Cerdo", "Asopramas", 20800f, "Carne de cerdo proveniente de los Montes de María, Colosó, Sucre");
+
+    static Carne carneChivo = new Carne("Cadera", false, "Carnes rojas", 2f, "Chivo", 35,
+    "4 a 12 meses", 1.5f, 45, 127, 3003, "Cadera de Chivo", "Cooperativa Multiactiva para la Paz de Colombia Coompazcol", 20000f,
+    "Carne de Chivo proveniente de la Granja San Luis, municipio de Fonseca, La Guajira");
+    
+    // LACTEOS
+    
+    static Lacteos lecheBufalo = new Lacteos(false, true, "Ninguno", 2f, "Búfalo", 
+    60, "7 a 14 días", 0.25f, 80, 42, 4001, "Leche de Búfalo", "Ecobúfalo", 4500f,
+    "Leche de Búfalo proveniente del área de reincorporación San Francisco, ubicada en Yondó, Antioquia");
+    
+    static Lacteos quesoBufalo = new Lacteos(false, true, "Ninguno", 5f, "Búfalo", 
+    90, "6 a 8 meses", 0.25f, 120, 402f, 4002, "Queso de Búfalo", "Ecobúfalo", 5500f,
+    "Queso de Búfalo proveniente del área de reincorporación San Francisco, ubicada en Yondó, Antioquia");
+    
+    static Lacteos yogurt = new Lacteos(true, true, "Ninguno", 4f, "Vaca", 90, "6 a 8 meses",
+    0.25f, 78, 59, 4003, "Yogurt Artesanal", "Amasando Sueños", 5000f, "Yogurt creado por un grupo de mujeres luchadoras");
+
+    
+
+    
+    //Textiles
+    
     Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
     Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
     Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
+    
     Tula tulaWayuu = new Tula("Media",false,1,"10X20X20 cm",false,2,42342,"Tula wayuu multicolor","Comunidad wayuu",120000,"Tula wayuu original de varios colores");
     Tula tulaGigante = new Tula("Baja",true,0,"40X40X40 cm",true,5,84564,"Tula Gigante negra","Totto",150000,"Tula gigante negra sin estampados");
     Tula tulaMini = new Tula("Alta",true,2,"10X30X10 cm",true,10,625432,"Tula Miniatura roja","Totto",70000,"Tula miniatura roja con cuadros negros");
@@ -22,6 +114,6 @@ public class Instancias {
     
     
     
-    ArrayList<Chaqueta> chaquetas = new ArrayList<>();
-    chaquetas.add(chaquetaRoja);
+
+
 }

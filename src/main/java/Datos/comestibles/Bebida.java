@@ -72,8 +72,8 @@ public abstract class Bebida extends Comestible{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Volumen ml: " + this.contenidoMililitros + "Tipo empaquetado: "
-                + this.empaquetado + "Origen Natural: " + this.origenNatural;
+        cad += "Volumen ml: " + this.contenidoMililitros + " Tipo empaquetado: "
+                + this.empaquetado + " Origen Natural: " + this.origenNatural + "\n";
         return cad;
     }
     

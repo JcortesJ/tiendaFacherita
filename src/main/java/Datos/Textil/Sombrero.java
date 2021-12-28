@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Sombrero extends Ropa{
+final public class Sombrero extends Ropa{
     private boolean tradicional;
     private String tipo;
     private String proceso;
@@ -47,16 +47,20 @@ public class Sombrero extends Ropa{
         return (cadena + "tradicional=" + tradicional + ", tipo=" + tipo + ", proceso=" + proceso);
     }
     
-    public float valorTotalProducto(int cantidad){
+@Override
+    public final float valorTotalProducto(int cantidad){
         return (cantidad*this.getPrecio());
     };
-    
-    public float promocion (int cantidad){
+    @Override
+    public final float promocion (int cantidad){
         if (cantidad < 4){
             return(cantidad);
         } else{
             return(float) (cantidad*this.getPrecio() * 0.05);   
         }
     };
+
+   
+
     
 }

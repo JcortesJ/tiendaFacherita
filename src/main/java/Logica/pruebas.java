@@ -5,14 +5,15 @@ import Datos.Producto;
 import UI.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import Datos.Textil.Chaqueta;
+import Datos.Textil.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class pruebas {
     
     public static void main(String[] arqs){
-        ArrayList<Chaqueta> chaquetas = new ArrayList<>();
+
+        ArrayList<Chaqueta> chaquetas = new ArrayList<Chaqueta>();
         Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
         Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
         Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
@@ -195,6 +196,30 @@ public class pruebas {
             }
         }
         System.out.println(" ".repeat(18) + "/// GRACIAS POR USAR NUESTROS SERVICIOS \\\\\\");
+
+       // Menu interfaz = new Menu();    
+        //interfaz.MostrarTipo("4");
+       // ArrayList array = new ArrayList();
+ 
+        //float num = 5.5f;
+        
+       // System.out.println(Instancias.yogurt.valorTotalProducto(14));
+        //System.out.println(Instancias.cafeParamillo.valorTotalProducto(50));
+        /*
+        System.out.println(Instancias.laRoja.getPrecio());
+        System.out.println("total 100 " + Instancias.laRoja.valorTotalProducto(100)); 
+        System.out.println("total 60 " + Instancias.laRoja.valorTotalProducto(60)); 
+        System.out.println(Instancias.laRoja.promocion(60)); 
+        /*
+        //System.out.println(Instancias.yogurt.toString());
+        //System.out.println(array.getClass());
+        /*String  buscando = "es";
+        String recurso = "sapas";
+        boolean bol = Menu.BuscarCadena(buscando, recurso);
+        System.out.println(bol);
+        System.out.println(buscando);
+        System.out.println(recurso);*/
+
     }
 
     private static void MostrarMain() {

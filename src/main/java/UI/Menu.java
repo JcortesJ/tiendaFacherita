@@ -2,18 +2,47 @@
 package UI;
 
 import java.util.ArrayList;
+
 import java.util.Scanner;
+
+import Datos.Producto;
+
 
 public class Menu {
 
-    public String BuscarCadena(String buscando, String recurso){
+    public boolean BuscarCadena(String buscando, String recurso){
         char[] recursoArray = recurso.toCharArray();
-     return "xd";
+        char[] buscandoArray = buscando.toCharArray();
+        
+        int limit = recursoArray.length -buscandoArray.length;
+        int i = 0;
+        boolean bandera = false;
+        
+        while( (i <= limit) && !bandera ){
+            int j = 0;        
+            while( j< buscandoArray.length && !bandera ){            
+                if( buscandoArray[j] != recursoArray[j+i] ){
+                    bandera = true;                 
+                }
+                j ++;
+            }    
+            bandera = !bandera;
+            i ++;
+        }
+     return bandera;
     }
     
-    public String Buscar(String caracter, ArrayList<Object> repo){
-        int i = 0;
-        return "xd";
+    public ArrayList<String> Buscar(String caracter, ArrayList<Producto> repo){
+        ArrayList<String> productos = new ArrayList();
+        int n = repo.size();
+        for(int i=0; i<n; i++){
+            Producto producto = repo.get(i);
+            if( BuscarCadena(caracter, producto.getNombre()) ){
+                productos.add(i + ". " + producto.getNombre());
+            }
+        }
+        
+        return productos;
     }
 
     public void MostrarMain(){
@@ -23,6 +52,7 @@ public class Menu {
         System.out.println(" 0. Salir\n 1. Comestible\n 2. Textiles\n 3. Farmacia\n 4. Buscar");
 
     }
+
 
     public void MostrarTipo(String navegante){ 
         Scanner sc = new Scanner(System.in);
@@ -61,8 +91,10 @@ public class Menu {
             }
         }
         System.out.println(" ".repeat(18) + "/// GRACIAS POR USAR NUESTROS SERVICIOS \\\\\\");
+
+    
+
+
+
     }
-
-
-
 }

@@ -13,7 +13,7 @@ import Datos.farmacia.*;
 public class pruebas2 {
 
     Medicamento med_prueba = new Medicamento ();
-    static Hogar casita = new Hogar(true, true,"frotar con las manos", 10, "mayores de 10 anos no usar", "limpieza de camas", 0, "Fabuloso", "Bandamax", 30,"jabon limpiador de camas" );
+    
     
     
     
@@ -22,6 +22,8 @@ public class pruebas2 {
      */
     public static void main(String args[]) {
         // TODO code application logic here
-        System.out.println("El objeto" + casita.getNombre()+ "\n"+ casita);
+        System.out.println("El objeto" + Instancias.carneChivo);
     }
+    
+  
 }

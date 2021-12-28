@@ -2,7 +2,11 @@
 package Datos.farmacia;
 
 
-public class Naturales extends Farmacia {
+final public class Naturales extends Farmacia {
+    
+    private String ingredientes;
+    private String beneficios;
+    private String origen;
 
     public Naturales() {
         super();
@@ -11,16 +15,14 @@ public class Naturales extends Farmacia {
         this.origen = "ninguno";
     }
 
-    public Naturales(String ingredientes, String beneficios, String origen, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+    public Naturales(String caducidad ,String ingredientes, String beneficios, String origen, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(caducidad, contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         this.ingredientes = ingredientes;
         this.beneficios = beneficios;
         this.origen = origen;
     }
     
-        private String ingredientes;
-    private String beneficios;
-    private String origen;
+    
     
 
     public String getIngredientes() {
@@ -55,6 +57,25 @@ public class Naturales extends Farmacia {
                  " Beneficios:" + this.getBeneficios()+ "\n" +
                 " Ingredientes: " + this.getIngredientes() + "\n" ;
         return  info_natu; 
+    }
+    
+     //OVERRIDE DE METODOS ABSTRACTOS
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       float presio_final = super.getPrecio();
+       return presio_final*cantidad;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+       float presio_final = super.getPrecio();
+        if(cantidad>2){
+            presio_final *= .95;
+            super.setPrecio(presio_final);//el precio tendrá un descuento del 5%
+        }
+      
+       return presio_final*cantidad;
     }
     
 }
