@@ -54,6 +54,6 @@ public class Instancias {
     90, "6 a 8 meses", 0.25f, 120, 402f, 4002, "Queso de Búfalo", "Ecobúfalo", 5500f,
     "Queso de Búfalo proveniente del área de reincorporación San Francisco, ubicada en Yondó, Antioquia");
     
-    Lacteos yogurt = new Lacteos(true, true, "Ninguno", 4f, "Vaca", 90, "6 a 8 meses",
+    static Lacteos yogurt = new Lacteos(true, true, "Ninguno", 4f, "Vaca", 90, "6 a 8 meses",
     0.25f, 78, 59, 4003, "Yogurt Artesanal", "Amasando Sueños", 5000f, "Yogurt creado por un grupo de mujeres luchadoras");
 }

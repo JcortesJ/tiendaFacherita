@@ -8,6 +8,51 @@ public class Lacteos extends Refrigerado{
     private boolean industrial;
     private String aditivos;
     
+    // MÉTODOS SOBREESCRITOS HEREDADOS
+    
+    @Override
+    public float valorTotalProducto(int cantidad){
+        float precio = this.getPrecio();
+        float precioDocenaYMedia = precio - (precio/12);
+        
+        float total = 0;
+        
+        if (cantidad >= 12){
+            int cantidadDocenas = ( cantidad - (cantidad%12) ) / 12;
+            total += cantidadDocenas*precioDocenaYMedia*12;
+            cantidad %= 12;
+        }
+        
+        if(cantidad >= 6){
+            int cantidadMedias =  ( cantidad - (cantidad%6) ) / 6;
+            total += cantidadMedias*precioDocenaYMedia*6;
+            cantidad %= 6;
+        
+        }      
+ 
+        total += precio*cantidad;
+        
+        return total;
+    }
+    
+    @Override
+    public float promocion (int cantidad){
+        float precio = valorTotalProducto(cantidad); 
+        
+        if (cantidad >= 85) {
+            precio -= (precio * 25) / 100;
+ 
+        }else if (cantidad >= 70){
+            precio -= (precio * 15) / 100;
+
+        }else if (cantidad >=  50){
+            precio -= (precio * 10) / 100;
+     
+        }    
+        
+        return precio;
+    }
+    
     //GETTERS AND SETTERS
 
     public boolean isDeslactosado() {
