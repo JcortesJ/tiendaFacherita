@@ -7,6 +7,33 @@ final public class Carne extends Refrigerado{
     private boolean importado;
     private String tipo;
     
+    // MÉTODOS SOBREESCRITOS HEREDADOS
+    
+    @Override
+    public float valorTotalProducto(int cantidad){
+        float precio = this.getPrecio();
+        float total = cantidad * precio;
+        return total;
+    }
+    
+    @Override
+    public float promocion (int cantidad){
+        float precio = valorTotalProducto(cantidad); 
+        
+        if (cantidad >= 100) {
+            precio -= (precio * 25) / 100;
+ 
+        }else if (cantidad >= 80){
+            precio -= (precio * 15) / 100;
+
+        }else if (cantidad >=  50){
+            precio -= (precio * 10) / 100;
+     
+        }    
+        
+        return precio;
+    }
+    
     //GETTERS AND SETTERS
 
     public String getCorteAnimal() {
@@ -60,8 +87,8 @@ final public class Carne extends Refrigerado{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Corte de la Carne: " + this.corteAnimal + " Importada: " + this.importado
-        + "Tipo de carne: " + this.tipo;
+        cad += "Corte de la Carne: " + this.corteAnimal + " Importada: " + this.importado
+        + " Tipo de carne: " + this.tipo;
         return cad;
     }
     
