@@ -52,4 +52,9 @@ public class Transacciones {
         
         
     }
+    
+    public void EliminarCompra(){
+        Compra nuevaCompra = new Compra(1,"","",cliente_actual);
+        setCompra_actual(nuevaCompra);
+    }
 }
