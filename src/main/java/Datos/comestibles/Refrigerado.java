@@ -60,8 +60,8 @@ public abstract class Refrigerado extends Comestible{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Temperatura mínima: " + this.temperaturaMinima + " Procedencia Animal: "
-                + this.procedenciaAnimal + " cadena de frío del alimento: " + this.cadenaFrio;
+        cad += "Temperatura mínima centigrados: " + this.temperaturaMinima + " Procedencia Animal: "
+                + this.procedenciaAnimal + " cadena de frío del alimento: " + this.cadenaFrio + "minutos\n";
         return cad;
     }
     

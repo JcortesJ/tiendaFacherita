@@ -61,7 +61,7 @@ public class Lacteos extends Refrigerado{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Deslactosada: " + this.deslactosado + " Producción industrial: "
+        cad += "Deslactosada: " + this.deslactosado + " Producción industrial: "
                 + this.industrial + " Aditivos del produtco: " + this.aditivos;
         return cad;
     }

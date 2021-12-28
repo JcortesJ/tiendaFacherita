@@ -62,7 +62,7 @@ public class Cerveza extends Bebida{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Grado alcohol: " + this.gradoAlcohol + " Ingredientes: " + 
+        cad += "Grado alcohol: " + this.gradoAlcohol + " Ingredientes: " + 
                 this.ingredientes + " Tipo de fermentación: "+ this.tipoFermentacion;
         return cad;
     }

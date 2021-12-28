@@ -60,8 +60,8 @@ public class Carne extends Refrigerado{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Corte de la Carne: " + this.corteAnimal + " Importada: " + this.importado
-        + "Tipo de carne: " + this.tipo;
+        cad += "Corte de la Carne: " + this.corteAnimal + " Importada: " + this.importado
+        + " Tipo de carne: " + this.tipo;
         return cad;
     }
 }

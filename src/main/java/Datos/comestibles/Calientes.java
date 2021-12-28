@@ -62,8 +62,8 @@ public class Calientes extends Bebida{
     @Override
     public String toString(){
         String cad = super.toString();
-        cad += " Sabor Tradicional" + this.tradicional + "Nivel de azúcar: " + this.nivelAzucar+
-                "Bebida instantanea: " + this.instantaneo;
+        cad += "Sabor Tradicional: " + this.tradicional + " Nivel de azúcar gr: " + this.nivelAzucar+
+                " Bebida instantanea: " + this.instantaneo;
         return cad;
         
     }
