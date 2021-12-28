@@ -3,6 +3,10 @@ package Datos.farmacia;
 
 
 final public class Hogar extends Farmacia {
+    
+    private boolean quimico;
+    private boolean biodegradable;
+    private String modoDeUso;
 
     public boolean isQuimico() {
         return quimico;
@@ -42,9 +46,7 @@ final public class Hogar extends Farmacia {
         this.modoDeUso = modoDeUso;
     }
    
-    private boolean quimico;
-    private boolean biodegradable;
-    private String modoDeUso;
+   
 
       @Override
     public String toString() {
@@ -61,12 +63,24 @@ final public class Hogar extends Farmacia {
     
     @Override
     public final float valorTotalProducto(int cantidad){
-       return 0;
+       return super.getPrecio();
     }
     
     @Override
     public final float promocion(int cantidad){
-        return 0;
+         float presio_final = super.getPrecio();
+        if(this.isQuimico() && cantidad>2){
+           
+            presio_final *= 1.50; //aumenta un 150%
+            super.setPrecio(presio_final);
+            
+        }
+        else if(this.isBiodegradable() && this.isQuimico()==false){
+            presio_final *= .75; //descuento del 25%
+            super.setPrecio(presio_final);
+        }
+       
+        return presio_final;
     }
     
     

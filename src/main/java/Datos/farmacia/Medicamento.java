@@ -3,8 +3,14 @@ package Datos.farmacia;
 import Datos.*;
 
 
+
 final public class Medicamento extends Farmacia {
 
+    private String fechaVencimiento;
+    private String contraindicaciones;
+    private boolean generica;
+    private String frecuencia;
+    
     public String getFechaVencimiento() {
         return fechaVencimiento;
     }
@@ -37,10 +43,7 @@ final public class Medicamento extends Farmacia {
         this.frecuencia = frecuencia;
     }
     
-    private String fechaVencimiento;
-    private String contraindicaciones;
-    private boolean generica;
-    private String frecuencia;
+ 
 
     public Medicamento() {
         super();

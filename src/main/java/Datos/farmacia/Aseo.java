@@ -59,13 +59,26 @@ final public class Aseo extends Farmacia {
         return  info_aseo; 
     }
     
+    
+    //OVERRIDE DE METODOS ABSTRACTOS
     @Override
     public final float valorTotalProducto(int cantidad){
-       return 0;
+         float presio_final = super.getPrecio();
+        if(this.isCorrosivo() && cantidad>2){
+            presio_final *= 1.20;
+            super.setPrecio(presio_final);//el precio subirá un 120%
+        }
+      
+       return presio_final;
     }
     
     @Override
     public final float promocion(int cantidad){
-        return 0;
+        float presio_final = super.getPrecio();
+        if(cantidad>5){
+            presio_final *= 0.8;
+            return presio_final;
+        }
+        return presio_final;
     }
 }
