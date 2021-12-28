@@ -1,3 +1,4 @@
+
 package Datos;
 
 public class Compra {
@@ -5,7 +6,9 @@ public class Compra {
     private String fecha;
     private String factura;
     private Cliente comprador;
-
+    
+    
+    // GETTERS AND SETTERS
     public int getCodigo() {
         return codigo;
     }
@@ -37,13 +40,21 @@ public class Compra {
     public void setComprador(Cliente comprador) {
         this.comprador = comprador;
     }
-
+    
+    // CONSTRUCTORES
     public Compra(int codigo, String fecha, String factura, Cliente comprador) {
         this.codigo = codigo;
         this.fecha = fecha;
         this.factura = factura;
         this.comprador = comprador;
     }
+
+    public Compra() {
+        
+       this(0,"Desconocida", "-----", new Cliente());
+    }
+    
+    
 
     @Override
     public String toString() {

@@ -2,6 +2,7 @@
 package Logica;
 
 import Datos.*;
+import java.util.HashMap;
 
 public class Transacciones {
     
@@ -48,9 +49,18 @@ public class Transacciones {
     }
     
     // MÉTODOS
-    public void AniadirCarro( Producto nuevo){
+    public void AniadirCarro( String nuevo, int cantidad){
         
-        
+        Carrito carrito = this.getCarrito_actual();
+        HashMap <String, Integer> bolsa = carrito.getBolsa();
+        bolsa.put(nuevo, cantidad);
+        System.out.println("Producto añadido a la bolsa!");
+    }
+    
+    public void EliminarCarro(String elimina){
+        Carrito carrito = this.getCarrito_actual();
+        HashMap <String, Integer> bolsa = carrito.getBolsa();
+        bolsa.remove(elimina);
     }
     
     public void EliminarCompra(){
