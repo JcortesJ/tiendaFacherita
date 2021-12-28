@@ -90,7 +90,7 @@ public abstract class  Producto {
         return cad;
     }
     
-    abstract float valorTotalProducto(int cantidad);
-    abstract float promocion (int cantidad);
+   // abstract float valorTotalProducto(int cantidad);
+    //abstract float promocion (int cantidad);
     
 }
