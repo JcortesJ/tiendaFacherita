@@ -1,7 +1,7 @@
 
 package Datos.comestibles;
 
-public class Carne extends Refrigerado{
+final public class Carne extends Refrigerado{
     
     private String corteAnimal;
     private boolean importado;
@@ -63,5 +63,15 @@ public class Carne extends Refrigerado{
         cad += " Corte de la Carne: " + this.corteAnimal + " Importada: " + this.importado
         + "Tipo de carne: " + this.tipo;
         return cad;
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
 }

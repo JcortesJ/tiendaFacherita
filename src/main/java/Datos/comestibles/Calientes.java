@@ -2,7 +2,7 @@
 package Datos.comestibles;
 
 
-public class Calientes extends Bebida{
+final public class Calientes extends Bebida{
     
     private boolean tradicional;
     private float nivelAzucar;
@@ -66,5 +66,15 @@ public class Calientes extends Bebida{
                 "Bebida instantanea: " + this.instantaneo;
         return cad;
         
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
 }

@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Sombrero extends Ropa{
+final public class Sombrero extends Ropa{
     private boolean tradicional;
     private String tipo;
     private String proceso;
@@ -45,6 +45,16 @@ public class Sombrero extends Ropa{
     public String toString() {
         String cadena = super.toString();
         return (cadena + "tradicional=" + tradicional + ", tipo=" + tipo + ", proceso=" + proceso);
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
     
 }

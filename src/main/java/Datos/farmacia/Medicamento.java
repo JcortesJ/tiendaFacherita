@@ -3,7 +3,7 @@ package Datos.farmacia;
 import Datos.*;
 
 
-public class Medicamento extends Farmacia {
+final public class Medicamento extends Farmacia {
 
     public String getFechaVencimiento() {
         return fechaVencimiento;
@@ -50,8 +50,8 @@ public class Medicamento extends Farmacia {
         this.frecuencia = "ninguna";
     }
 
-    public Medicamento(String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+    public Medicamento(String caducidad ,String fechaVencimiento, String contraindicaciones, boolean generica, String frecuencia, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(caducidad ,contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         this.fechaVencimiento = fechaVencimiento;
         this.contraindicaciones = contraindicaciones;
         this.generica = generica;
@@ -70,6 +70,16 @@ public class Medicamento extends Farmacia {
                  "Fecha vencimiento " + this.getFechaVencimiento() + "\n" +
                 "Es generico: " + gen + "\n" ;
         return  info_medicamento; 
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
     
     

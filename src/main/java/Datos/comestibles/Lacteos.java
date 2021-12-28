@@ -2,7 +2,7 @@
 package Datos.comestibles;
 
 
-public class Lacteos extends Refrigerado{
+final public class Lacteos extends Refrigerado{
     
     private boolean deslactosado;
     private boolean industrial;
@@ -64,5 +64,15 @@ public class Lacteos extends Refrigerado{
         cad += " Deslactosada: " + this.deslactosado + " Producción industrial: "
                 + this.industrial + " Aditivos del produtco: " + this.aditivos;
         return cad;
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
 }

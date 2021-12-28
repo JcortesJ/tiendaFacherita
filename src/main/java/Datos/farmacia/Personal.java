@@ -2,7 +2,7 @@
 package Datos.farmacia;
 
 
-public class Personal extends Farmacia {
+final public class Personal extends Farmacia {
 
     public int getEdadRecomendada() {
         return edadRecomendada;
@@ -35,8 +35,8 @@ public class Personal extends Farmacia {
         this.unisex = false;
     }
 
-    public Personal(int edadRecomendada, String zonaCuerpo, boolean unisex, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+    public Personal(String caducidad ,int edadRecomendada, String zonaCuerpo, boolean unisex, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(caducidad ,contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         this.edadRecomendada = edadRecomendada;
         this.zonaCuerpo = zonaCuerpo;
         this.unisex = unisex;
@@ -55,6 +55,16 @@ public class Personal extends Farmacia {
                 "Es unisex: " + gen + "\n" ;
         return  info_per; 
 
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
 
    

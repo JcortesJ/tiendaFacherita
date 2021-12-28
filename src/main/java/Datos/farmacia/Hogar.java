@@ -2,7 +2,7 @@
 package Datos.farmacia;
 
 
-public class Hogar extends Farmacia {
+final public class Hogar extends Farmacia {
 
     public boolean isQuimico() {
         return quimico;
@@ -35,8 +35,8 @@ public class Hogar extends Farmacia {
         this.modoDeUso = " ni idea pai ";
     }
 
-    public Hogar(boolean quimico, boolean biodegradable, String modoDeUso, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+    public Hogar(String caducidad , boolean quimico, boolean biodegradable, String modoDeUso, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super(caducidad, contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         this.quimico = quimico;
         this.biodegradable = biodegradable;
         this.modoDeUso = modoDeUso;
@@ -57,6 +57,16 @@ public class Hogar extends Farmacia {
         
         return  info_hogar; 
 
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
     
     

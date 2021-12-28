@@ -2,7 +2,7 @@
 package Datos.farmacia;
 
 
-public class Sinteticos extends Farmacia {
+final public class Sinteticos extends Farmacia {
 
     public String getFabricante() {
         return fabricante;
@@ -35,8 +35,8 @@ public class Sinteticos extends Farmacia {
         this.duracionTratamiento = "0 meses";
     }
 
-    public Sinteticos(String fabricante, boolean importado, String duracionTratamiento, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
-        super(contenido, restr, us0, codigo, nombre, empresa, precio, desp);
+    public Sinteticos(String caducidad ,String fabricante, boolean importado, String duracionTratamiento, float contenido, String restr, String us0, int codigo, String nombre, String empresa, float precio, String desp) {
+        super( caducidad, contenido, restr, us0, codigo, nombre, empresa, precio, desp);
         this.fabricante = fabricante;
         this.importado = importado;
         this.duracionTratamiento = duracionTratamiento;
@@ -56,5 +56,15 @@ public class Sinteticos extends Farmacia {
                 "Es importado: " + gen + "\n" ;
         return  info_sint; 
 
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
 }

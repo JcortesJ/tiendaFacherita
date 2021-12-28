@@ -1,7 +1,7 @@
 
 package Datos.comestibles;
 
-public class Cerveza extends Bebida{
+final public class Cerveza extends Bebida{
     
     private float gradoAlcohol;
     private String ingredientes;
@@ -65,6 +65,16 @@ public class Cerveza extends Bebida{
         cad += " Grado alcohol: " + this.gradoAlcohol + " Ingredientes: " + 
                 this.ingredientes + " Tipo de fermentación: "+ this.tipoFermentacion;
         return cad;
+    }
+    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+       return 0;
+    }
+    
+    @Override
+    public final float promocion(int cantidad){
+        return 0;
     }
     
 }
