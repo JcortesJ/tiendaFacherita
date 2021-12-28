@@ -7,7 +7,7 @@ public class Cliente {
     private int id;
     private String nombre;
     private float dineroDisponible;
-    private HashMap<Integer,String> historial;
+    private HashMap<Integer,Compra> historial;
     
     // GETTERS AND SETTERS
     public int getId() {
@@ -34,17 +34,17 @@ public class Cliente {
         this.dineroDisponible = dineroDisponible;
     }
 
-    public HashMap<Integer,String> getHistorial() {
+    public HashMap<Integer,Compra> getHistorial() {
         return historial;
     }
 
-    public void setHistorial(HashMap<Integer,String> historial) {
+    public void setHistorial(HashMap<Integer,Compra> historial) {
         this.historial = historial;
     }
     
     // CONSTRUCTORES
 
-    public Cliente(int id, String nombre, float dineroDisponible, HashMap<Integer, String> historial) {
+    public Cliente(int id, String nombre, float dineroDisponible, HashMap<Integer, Compra> historial) {
         this.id = id;
         this.nombre = nombre;
         this.dineroDisponible = dineroDisponible;
@@ -53,7 +53,7 @@ public class Cliente {
     
     
     public Cliente(){
-        this(0,"Desconocido",0,new HashMap<Integer, String>());
+        this(0,"Desconocido",0,new HashMap<Integer, Compra>());
     }
     
     @Override
