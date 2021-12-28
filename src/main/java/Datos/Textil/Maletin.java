@@ -2,7 +2,7 @@
 package Datos.Textil;
 import Datos.Producto;
 
-abstract class Maletin extends Producto{
+public abstract class Maletin extends Producto{
     private String medidas;
     private boolean personalizable;
     private int bolsillos;

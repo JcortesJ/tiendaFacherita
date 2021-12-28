@@ -3,7 +3,7 @@ package Datos.Textil;
 import Datos.Producto;
 
 
-abstract class Ropa extends Producto{
+public abstract class Ropa extends Producto{
     private String etiqueta;
     private int talla;
     private String garantia;

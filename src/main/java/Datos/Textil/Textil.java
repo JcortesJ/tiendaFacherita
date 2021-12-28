@@ -1,7 +1,7 @@
 package Datos.Textil;
 import Datos.Producto;
 
-abstract class Textil extends Producto{
+public abstract class Textil extends Producto{
     private String material;
     private String color;
     private String cuidados;
