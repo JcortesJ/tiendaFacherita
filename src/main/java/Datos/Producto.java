@@ -86,11 +86,13 @@ public abstract class  Producto {
         String cad = "Nombre del producto: " + this.getNombre() + "\n"
                 + "Codigo: " + presio+ "\n" + 
                 "Empresa productora: " + this.getEmpresa() + "\n" +
-                "Descripcion: "+ this.getDescripcion()+"\n";
+                "Descripcion: "+ this.getDescripcion()+"\n"
+                + "Precio del producto: " + this.getPrecio()+"\n";
         return cad;
     }
     
-    abstract float valorTotalProducto(int cantidad);
-    abstract float promocion (int cantidad);
-    
+
+    public abstract float valorTotalProducto(int cantidad);
+    public abstract float promocion (int cantidad);
+
 }

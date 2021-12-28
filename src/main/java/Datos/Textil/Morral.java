@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Morral extends Maletin{
+final public class Morral extends Maletin{
     private boolean ruedas;
     private boolean rigida;
     private String disenios;
@@ -41,6 +41,16 @@ public class Morral extends Maletin{
         this.disenios = disenios;
     }
     
+    public float valorTotalProducto(int cantidad){
+        return (cantidad*this.getPrecio());
+    };
     
+    public float promocion (int cantidad){
+        if (cantidad < 2){
+            return(cantidad );
+        } else{
+            return(float) (cantidad*this.getPrecio()* 0.1);   
+        }
+    };
     
 }

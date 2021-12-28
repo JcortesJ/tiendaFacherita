@@ -69,10 +69,10 @@ public abstract class Comestible extends Producto{
     
     @Override
     public String toString(){
-        String cad = "";
-        cad += "Fecha de vencimmiento: " + this.vencimiento + " peso: " +this.peso
-                + " unidades disponibles: " + this.unidadesVenta+ "calorias" + 
-                this.calorias;
+        String cad = super.toString();
+        cad += "Fecha de vencimmiento: " + this.vencimiento + " peso kg: " +this.peso
+                + " unidades disponibles: " + this.unidadesVenta+ " calorias: " + 
+                this.calorias+ "\n";
         return cad;
     }
 }

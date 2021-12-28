@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Tula extends Maletin {
+final public class Tula extends Maletin {
     private String gama;
     private boolean personalizado;
     private int correas;
@@ -46,5 +46,22 @@ public class Tula extends Maletin {
         String cadena = super.toString();
         return (cadena + "gama=" + gama + ", personalizado=" + personalizado + ", correas=" + correas);
     }
+    
+    @Override
+    
+    public final float valorTotalProducto(int cantidad){
+        return (cantidad*this.getPrecio());
+    };
+    
+    
+    @Override
+    public final float promocion (int cantidad){
+        if (cantidad < 3){
+            return(cantidad);
+        } else{
+            return(float) (this.getPrecio() * 2 * (cantidad/3) + (this.getPrecio() * (cantidad%3)));   
+        }
+    };
+
     
 }
