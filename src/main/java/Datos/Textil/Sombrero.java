@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Sombrero extends Ropa{
+final public class Sombrero extends Ropa{
     private boolean tradicional;
     private String tipo;
     private String proceso;
@@ -46,5 +46,7 @@ public class Sombrero extends Ropa{
         String cadena = super.toString();
         return (cadena + "tradicional=" + tradicional + ", tipo=" + tipo + ", proceso=" + proceso);
     }
+    
+   
     
 }

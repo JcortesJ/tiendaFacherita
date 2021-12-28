@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Chaqueta extends Ropa{
+ final public class Chaqueta extends Ropa{
     private String accesorios;
     private boolean personalizable;
     private String tipo;
@@ -48,5 +48,6 @@ public class Chaqueta extends Ropa{
         String cadena = super.toString();
         return (cadena + "accesorios=" + accesorios + ", personalizable=" + personalizable + ", tipo=" + tipo);
     }
-   
+    
+    
 }

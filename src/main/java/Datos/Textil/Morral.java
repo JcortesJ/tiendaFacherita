@@ -1,7 +1,7 @@
 
 package Datos.Textil;
 
-public class Morral extends Maletin{
+final public class Morral extends Maletin{
     private boolean ruedas;
     private boolean rigida;
     private String disenios;

@@ -1,7 +1,7 @@
 
 package Datos.comestibles;
 
-public class Cerveza extends Bebida{
+final public class Cerveza extends Bebida{
     
     private float gradoAlcohol;
     private String ingredientes;
@@ -66,5 +66,7 @@ public class Cerveza extends Bebida{
                 this.ingredientes + " Tipo de fermentación: "+ this.tipoFermentacion;
         return cad;
     }
+    
+ 
     
 }
