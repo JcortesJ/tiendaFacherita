@@ -59,12 +59,24 @@ final public class Personal extends Farmacia {
     
     @Override
     public final float valorTotalProducto(int cantidad){
-       return 0;
+      float presio_final = super.getPrecio();
+        if(this.isUnisex()==false){
+            presio_final *= 1.05;
+            super.setPrecio(presio_final);//el precio subirá un 105%
+        }
+      
+       return presio_final;
     }
     
     @Override
     public final float promocion(int cantidad){
-        return 0;
+        float presio_final = super.getPrecio();
+        if(cantidad>5){
+            presio_final *= .97;
+            super.setPrecio(presio_final);//el precio tendrá un descuento del 3%
+        }
+      
+       return presio_final;
     }
 
    

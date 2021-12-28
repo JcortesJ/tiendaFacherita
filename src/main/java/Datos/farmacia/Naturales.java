@@ -18,7 +18,7 @@ final public class Naturales extends Farmacia {
         this.origen = origen;
     }
     
-        private String ingredientes;
+    private String ingredientes;
     private String beneficios;
     private String origen;
     
@@ -59,12 +59,19 @@ final public class Naturales extends Farmacia {
     
     @Override
     public final float valorTotalProducto(int cantidad){
-       return 0;
+       float presio_final = super.getPrecio();
+       return presio_final;
     }
     
     @Override
     public final float promocion(int cantidad){
-        return 0;
+       float presio_final = super.getPrecio();
+        if(cantidad>2){
+            presio_final *= .95;
+            super.setPrecio(presio_final);//el precio tendrá un descuento del 5%
+        }
+      
+       return presio_final;
     }
     
 }
