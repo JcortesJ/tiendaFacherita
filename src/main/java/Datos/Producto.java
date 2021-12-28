@@ -91,6 +91,6 @@ public abstract class  Producto {
     }
     
    // abstract float valorTotalProducto(int cantidad);
-    //abstract float promocion (int cantidad);
+   //abstract float promocion (int cantidad);
     
 }

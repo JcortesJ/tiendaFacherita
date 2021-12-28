@@ -26,8 +26,6 @@ public class pruebas {
             MostrarMain();
             System.out.println("Ingrese la opción que desea:");
             seccion = sc.nextInt();
-            System.out.print("\033[H\033[2J");
-            System.out.flush();
             int seccion2 = 1;
             if(seccion == 1){
                 while (seccion2 != 0){
@@ -191,6 +189,7 @@ public class pruebas {
             }else if(seccion == 5){
                 System.out.println(" ".repeat(7) + "/// CARRITO DE COMPRAS \\\\\\");
                 System.out.print(carritoCompra);
+                System.out.println(" 1. Terminar compra\n 2. Eliminar producto\n 0. Volver");
             }else if(seccion != 0){
                 System.out.println(" ".repeat(30) + "---------- OPCIÓN NO DISPONIBLE --------------");
             }
