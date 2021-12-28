@@ -47,4 +47,16 @@ public class Tula extends Maletin {
         return (cadena + "gama=" + gama + ", personalizado=" + personalizado + ", correas=" + correas);
     }
     
+    public float valorTotalProducto(int cantidad){
+        return (cantidad*this.getPrecio());
+    };
+    
+    public float promocion (int cantidad){
+        if (cantidad < 3){
+            return(cantidad);
+        } else{
+            return(float) (this.getPrecio() * 2 * (cantidad/3) + (this.getPrecio() * (cantidad%3)));   
+        }
+    };
+    
 }

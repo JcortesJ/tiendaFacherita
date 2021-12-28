@@ -48,5 +48,13 @@ public class Chaqueta extends Ropa{
         String cadena = super.toString();
         return (cadena + "accesorios=" + accesorios + ", personalizable=" + personalizable + ", tipo=" + tipo);
     }
-   
+    
+    public float valorTotalProducto(int cantidad){
+        return (cantidad*this.getPrecio());
+    };
+    
+    public float promocion (int cantidad){
+        return(cantidad);
+    };
+
 }
