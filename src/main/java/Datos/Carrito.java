@@ -6,10 +6,6 @@ package Datos;
 
 import java.util.HashMap;
 
-/**
- *
- * @author juan manuel
- */
 public class Carrito {
     
     private int cantidad;
