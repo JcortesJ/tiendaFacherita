@@ -49,5 +49,15 @@ package Datos.Textil;
         return (cadena + "accesorios=" + accesorios + ", personalizable=" + personalizable + ", tipo=" + tipo);
     }
     
-    
+    @Override
+    public final float valorTotalProducto(int cantidad){
+        return (cantidad*this.getPrecio());
+    };
+    @Override
+    public final float promocion (int cantidad){
+        return(cantidad);
+    };
+
+
+
 }

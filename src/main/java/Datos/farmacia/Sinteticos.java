@@ -70,7 +70,7 @@ final public class Sinteticos extends Farmacia {
             super.setPrecio(presio_final);//el precio subirá un 19%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
     
     @Override
@@ -86,6 +86,6 @@ final public class Sinteticos extends Farmacia {
             super.setPrecio(presio_final);//el precio tendra un descuendo del 10%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
 }

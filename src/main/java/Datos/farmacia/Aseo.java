@@ -69,7 +69,7 @@ final public class Aseo extends Farmacia {
             super.setPrecio(presio_final);//el precio subirá un 20%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
     
     @Override
@@ -79,6 +79,6 @@ final public class Aseo extends Farmacia {
             presio_final *= 0.8; //el precio bajara un 2'%
             return presio_final;
         }
-        return presio_final;
+        return presio_final*cantidad;
     }
 }

@@ -1,6 +1,6 @@
 
 package Datos.farmacia;
-import Datos.*;
+import Datos.Producto;
 
 public  abstract class Farmacia extends Producto {
 

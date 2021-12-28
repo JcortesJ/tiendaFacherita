@@ -65,7 +65,7 @@ final public class Hogar extends Farmacia {
     
     @Override
     public final float valorTotalProducto(int cantidad){
-       return super.getPrecio();
+       return super.getPrecio()*cantidad;
     }
     
     @Override
@@ -82,7 +82,7 @@ final public class Hogar extends Farmacia {
             super.setPrecio(presio_final);
         }
        
-        return presio_final;
+        return presio_final*cantidad;
     }
     
     

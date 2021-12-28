@@ -77,7 +77,7 @@ final public class Medicamento extends Farmacia {
             super.setPrecio(presio_final);//el precio tendra descuento del 20%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
     
     @Override
@@ -88,7 +88,7 @@ final public class Medicamento extends Farmacia {
             super.setPrecio(presio_final);//el precio tendra un descuento del 90%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
     
     

@@ -1,9 +1,13 @@
 
 package Logica;
-
+//import java.util.ArrayList;
 import Datos.comestibles.*;
-
+import Datos.Textil.*;
 import Datos.farmacia.*;
+//import Datos.Producto;
+
+
+
 
 
 public class Instancias {
@@ -34,7 +38,9 @@ public class Instancias {
     static  Personal per_3 = new Personal("2025", 25, "zona intima", false, 110, "hipersensibilidad a las toallas", "toallas intimas", 670,"Klotex", "Bandamax", (float)4.000, "Toallas intimas");
     
     //Sinteticos
-    
+    static Sinteticos sin_1 = new Sinteticos("ninguna", "Jhonson&Jhonson", true,"2 minutos de aplicacion", 200,"sensibilidad al producto", "Aplique sobre cabello remojado y enjuage", 700, "Shampoo anticaida", "Internacional-Importaciones SA", (float)15.000, "Shampoo anti: caida,caspa,resequedad");
+    static Sinteticos sin_2 = new Sinteticos("10/07/29", "Dago Garcia Aceites", false, "de 2 a 3 dias", 250, "ninguna", "Aplique sobre el area a masajear", 705, "Aceite masajeador", "DGA SA", (float) 45.000, "Aceite especial para masajes");
+    static Sinteticos sin_3 = new Sinteticos("ninguna", "Aguas del oriente SA", true, "Hasta que desaparezcan las imperfecciones", 300, "ninguna", "Limpieza facial", 710, "Agua micelar", "E corp", (float)7.500, "Agua micelar para la cara");
 
     // CERVEZAS
     static Cerveza laRoja = new Cerveza(5.5f, "Lúpulo, malta, agua, levadura", "Ale", 550f, "Vidrio", true, "No determina", 1f, 198, 43f, 1001, "LaRoja-Clasica", "LaRoja", 7000, "Cerveza tipo red ALe con buen balance entre malta y lupulo, sabor intenso");
@@ -87,8 +93,27 @@ public class Instancias {
     static Lacteos yogurt = new Lacteos(true, true, "Ninguno", 4f, "Vaca", 90, "6 a 8 meses",
     0.25f, 78, 59, 4003, "Yogurt Artesanal", "Amasando Sueños", 5000f, "Yogurt creado por un grupo de mujeres luchadoras");
 
-    static Sinteticos sin_1 = new Sinteticos("ninguna", "Jhonson&Jhonson", true,"2 minutos de aplicacion", 200,"sensibilidad al producto", "Aplique sobre cabello remojado y enjuage", 700, "Shampoo anticaida", "Internacional-Importaciones SA", (float)15.000, "Shampoo anti: caida,caspa,resequedad");
-    static Sinteticos sin_2 = new Sinteticos("10/07/29", "Dago Garcia Aceites", false, "de 2 a 3 dias", 250, "ninguna", "Aplique sobre el area a masajear", 705, "Aceite masajeador", "DGA SA", (float) 45.000, "Aceite especial para masajes");
-    static Sinteticos sin_3 = new Sinteticos("ninguna", "Aguas del oriente SA", true, "Hasta que desaparezcan las imperfecciones", 300, "ninguna", "Limpieza facial", 710, "Agua micelar", "E corp", (float)7.500, "Agua micelar para la cara");
+    
+
+    
+    //Textiles
+    
+    Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
+    Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
+    Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
+    
+    Tula tulaWayuu = new Tula("Media",false,1,"10X20X20 cm",false,2,42342,"Tula wayuu multicolor","Comunidad wayuu",120000,"Tula wayuu original de varios colores");
+    Tula tulaGigante = new Tula("Baja",true,0,"40X40X40 cm",true,5,84564,"Tula Gigante negra","Totto",150000,"Tula gigante negra sin estampados");
+    Tula tulaMini = new Tula("Alta",true,2,"10X30X10 cm",true,10,625432,"Tula Miniatura roja","Totto",70000,"Tula miniatura roja con cuadros negros");
+    Sombrero sombreroVueltiao= new Sombrero(true,"Vueltiao","realizado por campesinos","FKAH430",10,"5 meses",543234,"Sombrero Vueltiao","Colsombreros",50000,"Sombrero vueltiao original");
+    Sombrero sombreroFemenino= new Sombrero(false,"Femenino","tejido a mano","GAFV230",6,"3 meses",645673,"Sombrero Femenino","Hatisd",20000,"Sombrero femenino blanco");
+    Sombrero sombreroLlanero= new Sombrero(true,"Llanero","realizado con 100% cuero","FAGR630",12,"1 mes",432453,"Sombrero Llanero","Llansom",150000,"Sombrero llanero original de cuero");
+    Morral morralInfantil = new Morral(true, true, "cubos de colores", "20X40X40 cm",true,5,763543,"Morral para niños", "Totto",153000,"Morral para niños con diseño infantil");
+    Morral morralAdulto = new Morral(false, true, "lineas", "50X80X80 cm",false,7,62543,"Morral para adultos", "Coonfanor",221000,"Morral para adultos con diseño único");
+    Morral morralViajero = new Morral(false, false, "Ninguno", "90X100X90 cm",false,10,62622,"Morral para viajar", "Cooamacol",135000,"Morral para viajer de color negro sin diseño");
+    
+    
+    
+
 
 }

@@ -69,7 +69,7 @@ final public class Personal extends Farmacia {
             super.setPrecio(presio_final);//el precio subirá un 5%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
     
     @Override
@@ -80,7 +80,7 @@ final public class Personal extends Farmacia {
             super.setPrecio(presio_final);//el precio tendrá un descuento del 3%
         }
       
-       return presio_final;
+       return presio_final*cantidad;
     }
 
    
