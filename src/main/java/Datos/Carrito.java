@@ -2,6 +2,7 @@
 package Datos;
 
 import java.util.HashMap;
+import java.util.Set;
 
 
 public class Carrito {
@@ -46,5 +47,21 @@ public class Carrito {
         this.user = user;
         this.bolsa = bolsa;
              
+    }
+    
+    public float calcularCostoPedido(){
+        Set<Producto> llaves = this.getBolsa().keySet();
+        float costoTotal= 0;
+        for(Producto p : llaves){
+            float costoReal=0;
+            int cantidad = this.getBolsa().get(p);
+            float costoPosible1 = p.valorTotalProducto(cantidad);
+            float costoPosible2 = p.valorTotalProducto(cantidad);
+            if(costoPosible1>costoPosible2) costoReal = costoPosible2;
+            else if(costoPosible2> costoPosible1) costoReal= costoPosible1;
+            else costoReal= costoPosible1;
+            costoTotal +=costoReal ;
+        }
+        return costoTotal;
     }
 }
