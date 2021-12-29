@@ -38,7 +38,7 @@ public class Menu {
         for(int i=0; i<n; i++){
             Producto producto = repo.get(i);
             if( BuscarCadena(caracter, producto.getNombre()) ){
-                productos.add(i + ". " + producto.getNombre());
+                productos.add((i+1) + ". " + producto.getNombre());
             }
         }
         

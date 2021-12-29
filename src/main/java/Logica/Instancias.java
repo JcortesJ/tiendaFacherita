@@ -138,24 +138,24 @@ public class Instancias {
     
     static  ArrayList<Producto> todosProductos = new ArrayList();
     
-    public static void CrearMegaArreglo(){
+    public static ArrayList<Producto> CrearMegaArreglo(ArrayList<Producto> todos){
         
-        todosProductos.addAll(productosAseo);
-        todosProductos.addAll(productosHogar);
-        todosProductos.addAll(productosNaturales);
-        todosProductos.addAll(productosPersonales);
-        todosProductos.addAll(productosSinteticos);
-        todosProductos.addAll(medicamentos);
-        todosProductos.addAll(cervezas);
-        todosProductos.addAll(bebidasCalientes);
-        todosProductos.addAll(carnes);
-        todosProductos.addAll(bebidasLacteas);
-        todosProductos.addAll(chaquetas);
-        todosProductos.addAll(tulas);
-        todosProductos.addAll(sombreros);
-        todosProductos.addAll(morrales);
- 
+        todos.addAll(productosAseo);
+        todos.addAll(productosHogar);
+        todos.addAll(productosNaturales);
+        todos.addAll(productosPersonales);
+        todos.addAll(productosSinteticos);
+        todos.addAll(medicamentos);
+        todos.addAll(cervezas);
+        todos.addAll(bebidasCalientes);
+        todos.addAll(carnes);
+        todos.addAll(bebidasLacteas);
+        todos.addAll(chaquetas);
+        todos.addAll(tulas);
+        todos.addAll(sombreros);
+        todos.addAll(morrales);
         
+        return todos;
         
     }
     

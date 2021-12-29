@@ -19,10 +19,12 @@ public class pruebas {
         ArrayList<Calientes> calientes = Instancias.bebidasCalientes;
         ArrayList<Carne> carnes = Instancias.carnes;
         ArrayList<Lacteos> lacteos = Instancias.bebidasLacteas;
+        ArrayList<Producto> productos = Instancias.CrearMegaArreglo(Instancias.todosProductos);
         
         Transacciones transaccion = new Transacciones();
         
         Scanner sc = new Scanner(System.in);
+        Scanner sx = new Scanner(System.in);
         Map<Producto, Integer> carritoCompra = new HashMap<Producto, Integer>();
         int seccion = 1;
         while(seccion != 0){
@@ -217,8 +219,38 @@ public class pruebas {
                         + "para ir a un tipo de producto en específico ||");
                 System.out.println(" 1. Medicamento\n 2. Aseo");
             } else if(seccion == 4){
-                System.out.println(" ".repeat(7) + "/// BUSQUEDA \\\\\\");
-                System.out.print("|| Ingrese el nombre del producto: ||");
+                int seleccionado = 1;
+                while(seleccionado != 0){
+                    System.out.println(" ".repeat(7) + "/// BUSQUEDA \\\\\\");
+                    System.out.print("|| Ingrese el nombre del producto: ||\n");
+                    String buscador = sx.nextLine();
+                    Menu menu = new Menu();
+                    ArrayList<String> resultados = menu.Buscar(buscador, productos);
+                    System.out.print("Los resultados que coinciden con su busqueda son:\n");
+                    for(String cad : resultados){
+                        System.out.println(cad);
+                    }
+                    System.out.println("0. Salir\n");
+                    
+                    seleccionado = sc.nextInt();
+                    int seccion3 = 1;
+                    while(seccion3 != 0 && seleccionado > 0){
+                        System.out.print("Por favor escriba el número del producto del cual quiere más información: ");
+                        System.out.println(productos.get(seleccionado-1).toString());
+                        System.out.println(" 1. Comprar\n 0. Volver");
+                        int accion = sc.nextInt();
+                        if(accion == 1){
+                            System.out.println("Ingrese la cantidad del producto que quiere comprar:");
+                            int cantidadProducto = sc.nextInt();
+                            transaccion.AniadirCarro(productos.get(seleccionado-1),cantidadProducto);
+                            seleccionado = 0;
+                            seccion3=0;
+                            System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
+                        }else if (accion != 0){
+                            System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                        }
+                    }
+                }
             }else if(seccion == 5){
                 System.out.println(" ".repeat(7) + "/// CARRITO DE COMPRAS \\\\\\");
                 System.out.print(carritoCompra);
