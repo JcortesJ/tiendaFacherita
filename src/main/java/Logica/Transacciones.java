@@ -9,7 +9,7 @@ public class Transacciones {
     private Cliente cliente_actual;
     private Carrito carrito_actual;
     
-    // GETTERS NAD SETTERS
+    // GETTERS NAD SETTERS jaja lo escribiò mal :v
     
     public Compra getCompra_actual() {
         return compra_actual;
@@ -51,5 +51,18 @@ public class Transacciones {
     public void AniadirCarro( Producto nuevo){
         
         
+    }
+    
+    public Compra Comprar(Cliente cliente, Carrito carrito ){
+        Compra generada = new Compra();
+        float valor_compra = carrito.calcularCostoPedido();
+        if(cliente.getDineroDisponible()<valor_compra){
+            System.out.println("Compra rechazada");
+        }
+        else{
+            System.out.println("Compra Exitosa");
+        
+        }
+        return generada;
     }
 }
