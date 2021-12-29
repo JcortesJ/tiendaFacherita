@@ -16,6 +16,10 @@ public class pruebas {
     
     public static void main(String[] arqs){
         ArrayList<Cerveza> cervezas = Instancias.cervezas;
+        ArrayList<Calientes> calientes = Instancias.bebidasCalientes;
+        ArrayList<Carne> carnes = Instancias.carnes;
+        ArrayList<Lacteos> lacteos = Instancias.bebidasLacteas;
+        
         Transacciones transaccion = new Transacciones();
         
         Scanner sc = new Scanner(System.in);
@@ -52,11 +56,15 @@ public class pruebas {
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 > cervezas.size()){
+                                int seccion5 = 1; 
+                                if(seccion4 == 0){
+                                    seccion5 = 0;
+                                }
+                                
+                                while (seccion4 > cervezas.size() || seccion4<0){
                                     System.out.println("Producto no válido, vuelvalo a intentar:");
                                     seccion4 = sc.nextInt();
                                 }
-                                int seccion5 = 1;
                                 while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
                                     System.out.println(cervezas.get(seccion4-1).toString());
@@ -71,26 +79,26 @@ public class pruebas {
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
                                 }   
                             }else if(seccion3 == 2){
                                 System.out.println(" ".repeat(30) + "/// BEBIDAS CLIENTES DISPONIBLES \\\\\\");
-                                for (int i=0;i<chaquetas.size();i++){
-                                    System.out.println(" "+ (i+1) +"."+ chaquetas.get(i).getNombre());
+                                for (int i=0;i<calientes.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ calientes.get(i).getNombre());
                                 }
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
                                 while (seccion4 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
-                                    System.out.println(chaquetas.get(seccion4-1).toString());
+                                    System.out.println(calientes.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
                                     if(seccion4 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
-                                        carritoCompra.put(chaquetas.get(seccion4-1),cantidadProducto);
+                                        transaccion.AniadirCarro(calientes.get(seccion4-1), cantidadProducto);
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
