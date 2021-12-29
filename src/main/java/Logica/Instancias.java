@@ -4,11 +4,9 @@ package Logica;
 import Datos.comestibles.*;
 import Datos.Textil.*;
 import Datos.farmacia.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 //import Datos.Producto;
-
-
-
-
 
 public class Instancias {
     //objetos de farmacia del 500 al 1000
@@ -94,26 +92,46 @@ public class Instancias {
     0.25f, 78, 59, 4003, "Yogurt Artesanal", "Amasando Sueños", 5000f, "Yogurt creado por un grupo de mujeres luchadoras");
 
     
-
+    //CHAQUETAS
     
-    //Textiles
+    static Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
+    static Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
+    static Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
     
-    Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
-    Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
-    Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
+    //TULAS
     
-    Tula tulaWayuu = new Tula("Media",false,1,"10X20X20 cm",false,2,42342,"Tula wayuu multicolor","Comunidad wayuu",120000,"Tula wayuu original de varios colores");
-    Tula tulaGigante = new Tula("Baja",true,0,"40X40X40 cm",true,5,84564,"Tula Gigante negra","Totto",150000,"Tula gigante negra sin estampados");
-    Tula tulaMini = new Tula("Alta",true,2,"10X30X10 cm",true,10,625432,"Tula Miniatura roja","Totto",70000,"Tula miniatura roja con cuadros negros");
-    Sombrero sombreroVueltiao= new Sombrero(true,"Vueltiao","realizado por campesinos","FKAH430",10,"5 meses",543234,"Sombrero Vueltiao","Colsombreros",50000,"Sombrero vueltiao original");
-    Sombrero sombreroFemenino= new Sombrero(false,"Femenino","tejido a mano","GAFV230",6,"3 meses",645673,"Sombrero Femenino","Hatisd",20000,"Sombrero femenino blanco");
-    Sombrero sombreroLlanero= new Sombrero(true,"Llanero","realizado con 100% cuero","FAGR630",12,"1 mes",432453,"Sombrero Llanero","Llansom",150000,"Sombrero llanero original de cuero");
-    Morral morralInfantil = new Morral(true, true, "cubos de colores", "20X40X40 cm",true,5,763543,"Morral para niños", "Totto",153000,"Morral para niños con diseño infantil");
-    Morral morralAdulto = new Morral(false, true, "lineas", "50X80X80 cm",false,7,62543,"Morral para adultos", "Coonfanor",221000,"Morral para adultos con diseño único");
-    Morral morralViajero = new Morral(false, false, "Ninguno", "90X100X90 cm",false,10,62622,"Morral para viajar", "Cooamacol",135000,"Morral para viajer de color negro sin diseño");
+    static Tula tulaWayuu = new Tula("Media",false,1,"10X20X20 cm",false,2,42342,"Tula wayuu multicolor","Comunidad wayuu",120000,"Tula wayuu original de varios colores");
+    static Tula tulaGigante = new Tula("Baja",true,0,"40X40X40 cm",true,5,84564,"Tula Gigante negra","Totto",150000,"Tula gigante negra sin estampados");
+    static Tula tulaMini = new Tula("Alta",true,2,"10X30X10 cm",true,10,625432,"Tula Miniatura roja","Totto",70000,"Tula miniatura roja con cuadros negros");
+    
+    //SOMBREROS
+    
+    static Sombrero sombreroVueltiao= new Sombrero(true,"Vueltiao","realizado por campesinos","FKAH430",10,"5 meses",543234,"Sombrero Vueltiao","Colsombreros",50000,"Sombrero vueltiao original");
+    static Sombrero sombreroFemenino= new Sombrero(false,"Femenino","tejido a mano","GAFV230",6,"3 meses",645673,"Sombrero Femenino","Hatisd",20000,"Sombrero femenino blanco");
+    static Sombrero sombreroLlanero= new Sombrero(true,"Llanero","realizado con 100% cuero","FAGR630",12,"1 mes",432453,"Sombrero Llanero","Llansom",150000,"Sombrero llanero original de cuero");
+    
+    //MORRALES
+    
+    static Morral morralInfantil = new Morral(true, true, "cubos de colores", "20X40X40 cm",true,5,763543,"Morral para niños", "Totto",153000,"Morral para niños con diseño infantil");
+    static Morral morralAdulto = new Morral(false, true, "lineas", "50X80X80 cm",false,7,62543,"Morral para adultos", "Coonfanor",221000,"Morral para adultos con diseño único");
+    static Morral morralViajero = new Morral(false, false, "Ninguno", "90X100X90 cm",false,10,62622,"Morral para viajar", "Cooamacol",135000,"Morral para viajer de color negro sin diseño");
     
     
+    //LISTAS
     
-
+    ArrayList<Aseo> productosAseo = new ArrayList<>(Arrays.asList(aseo_1,aseo_2,aseo_3));
+    ArrayList<Hogar> productosHogar = new ArrayList<>(Arrays.asList(hogar_1,hogar_2,hogar_3));
+    ArrayList<Medicamento> medicamentos = new ArrayList<>(Arrays.asList(med_1,med_2,med_3));
+    ArrayList<Naturales> productosNaturales = new ArrayList<>(Arrays.asList(nat_1,nat_2,nat_3));
+    ArrayList<Personal> productosPersonales = new ArrayList<>(Arrays.asList(per_1,per_2,per_3));
+    ArrayList<Sinteticos> productosSinteticos = new ArrayList<>(Arrays.asList(sin_1,sin_2,sin_3));
+    ArrayList<Cerveza> cervezas = new ArrayList<>(Arrays.asList(laRoja,alternativa,laTrocha));
+    ArrayList<Calientes> bebidasCalientes = new ArrayList<>(Arrays.asList(cafeParamillo,cafeTercerAcuerdo,chocolateLaPaz));
+    ArrayList<Carne> carnes = new ArrayList<>(Arrays.asList(carneBufalo,carneCerdo,carneChivo));
+    ArrayList<Lacteos> bebidasLacteas = new ArrayList<>(Arrays.asList(lecheBufalo,quesoBufalo,yogurt));
+    ArrayList<Chaqueta> chaquetas = new ArrayList<>(Arrays.asList(chaquetaRoja,chaquetaCuero,chaquetaLana));
+    ArrayList<Tula> tulas = new ArrayList<>(Arrays.asList(tulaWayuu,tulaGigante,tulaMini));
+    ArrayList<Sombrero> sombreros = new ArrayList<>(Arrays.asList(sombreroVueltiao,sombreroFemenino,sombreroLlanero));
+    ArrayList<Morral> morrales = new ArrayList<>(Arrays.asList(morralInfantil,morralAdulto,morralViajero));
 
 }
