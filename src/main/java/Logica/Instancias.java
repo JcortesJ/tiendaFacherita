@@ -120,25 +120,25 @@ public class Instancias {
     
     //LISTAS
     
-    ArrayList<Aseo> productosAseo = new ArrayList<>(Arrays.asList(aseo_1,aseo_2,aseo_3));
-    ArrayList<Hogar> productosHogar = new ArrayList<>(Arrays.asList(hogar_1,hogar_2,hogar_3));
-    ArrayList<Medicamento> medicamentos = new ArrayList<>(Arrays.asList(med_1,med_2,med_3));
-    ArrayList<Naturales> productosNaturales = new ArrayList<>(Arrays.asList(nat_1,nat_2,nat_3));
-    ArrayList<Personal> productosPersonales = new ArrayList<>(Arrays.asList(per_1,per_2,per_3));
-    ArrayList<Sinteticos> productosSinteticos = new ArrayList<>(Arrays.asList(sin_1,sin_2,sin_3));
-    ArrayList<Cerveza> cervezas = new ArrayList<>(Arrays.asList(laRoja,alternativa,laTrocha));
-    ArrayList<Calientes> bebidasCalientes = new ArrayList<>(Arrays.asList(cafeParamillo,cafeTercerAcuerdo,chocolateLaPaz));
-    ArrayList<Carne> carnes = new ArrayList<>(Arrays.asList(carneBufalo,carneCerdo,carneChivo));
-    ArrayList<Lacteos> bebidasLacteas = new ArrayList<>(Arrays.asList(lecheBufalo,quesoBufalo,yogurt));
-    ArrayList<Chaqueta> chaquetas = new ArrayList<>(Arrays.asList(chaquetaRoja,chaquetaCuero,chaquetaLana));
-    ArrayList<Tula> tulas = new ArrayList<>(Arrays.asList(tulaWayuu,tulaGigante,tulaMini));
-    ArrayList<Sombrero> sombreros = new ArrayList<>(Arrays.asList(sombreroVueltiao,sombreroFemenino,sombreroLlanero));
-    ArrayList<Morral> morrales = new ArrayList<>(Arrays.asList(morralInfantil,morralAdulto,morralViajero));
+    static ArrayList<Aseo> productosAseo = new ArrayList<>(Arrays.asList(aseo_1,aseo_2,aseo_3));
+    static ArrayList<Hogar> productosHogar = new ArrayList<>(Arrays.asList(hogar_1,hogar_2,hogar_3));
+    static ArrayList<Medicamento> medicamentos = new ArrayList<>(Arrays.asList(med_1,med_2,med_3));
+    static ArrayList<Naturales> productosNaturales = new ArrayList<>(Arrays.asList(nat_1,nat_2,nat_3));
+    static ArrayList<Personal> productosPersonales = new ArrayList<>(Arrays.asList(per_1,per_2,per_3));
+    static ArrayList<Sinteticos> productosSinteticos = new ArrayList<>(Arrays.asList(sin_1,sin_2,sin_3));
+    static ArrayList<Cerveza> cervezas = new ArrayList<>(Arrays.asList(laRoja,alternativa,laTrocha));
+    static ArrayList<Calientes> bebidasCalientes = new ArrayList<>(Arrays.asList(cafeParamillo,cafeTercerAcuerdo,chocolateLaPaz));
+    static ArrayList<Carne> carnes = new ArrayList<>(Arrays.asList(carneBufalo,carneCerdo,carneChivo));
+    static ArrayList<Lacteos> bebidasLacteas = new ArrayList<>(Arrays.asList(lecheBufalo,quesoBufalo,yogurt));
+    static ArrayList<Chaqueta> chaquetas = new ArrayList<>(Arrays.asList(chaquetaRoja,chaquetaCuero,chaquetaLana));
+    static ArrayList<Tula> tulas = new ArrayList<>(Arrays.asList(tulaWayuu,tulaGigante,tulaMini));
+    static ArrayList<Sombrero> sombreros = new ArrayList<>(Arrays.asList(sombreroVueltiao,sombreroFemenino,sombreroLlanero));
+    static ArrayList<Morral> morrales = new ArrayList<>(Arrays.asList(morralInfantil,morralAdulto,morralViajero));
 
     
-    ArrayList<Producto> todosProductos = new ArrayList();
+    static  ArrayList<Producto> todosProductos = new ArrayList();
     
-    public void CrearMegaArreglo(){
+    public static void CrearMegaArreglo(){
         
         todosProductos.addAll(productosAseo);
         todosProductos.addAll(productosHogar);
