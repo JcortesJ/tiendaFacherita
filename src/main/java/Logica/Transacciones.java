@@ -2,6 +2,8 @@
 package Logica;
 
 import Datos.*;
+import java.util.HashMap;
+import java.util.Random;
 
 public class Transacciones {
     
@@ -48,9 +50,23 @@ public class Transacciones {
     }
     
     // MÉTODOS
-    public void AniadirCarro( Producto nuevo){
+    public void AniadirCarro( Producto nuevo, int cantidad){
         
-        
+        Carrito carrito = this.getCarrito_actual();
+        HashMap <Producto, Integer> bolsa = carrito.getBolsa();
+        bolsa.put(nuevo, cantidad);
+        System.out.println("Producto añadido a la bolsa!");
+    }
+    
+    public void EliminarCarro(String elimina){
+        Carrito carrito = this.getCarrito_actual();
+        HashMap <Producto, Integer> bolsa = carrito.getBolsa();
+        bolsa.remove(elimina);
+    }
+    
+    public void EliminarCompra(){
+        Compra nuevaCompra = new Compra(1,"","",cliente_actual);
+        setCompra_actual(nuevaCompra);
     }
     
     public Compra Comprar(Cliente cliente, Carrito carrito ){
@@ -60,7 +76,15 @@ public class Transacciones {
             System.out.println("Compra rechazada");
         }
         else{
+            Random xd = new Random();
+            String factura = "\n"+" El cliente: " + cliente.getNombre() + "Ha gastado: " + valor_compra + "En: " + carrito.getBolsa().size() + " Objetos";
             System.out.println("Compra Exitosa");
+            generada.setCodigo(xd.nextInt(1000));
+            generada.setComprador(cliente);
+            generada.setFactura(factura);
+            generada.setFecha("28/12/21");
+            System.out.println(factura);
+            cliente.aniadirHistorial(generada, generada.getCodigo());
         
         }
         return generada;

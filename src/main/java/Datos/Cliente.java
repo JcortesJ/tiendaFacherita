@@ -63,4 +63,11 @@ public class Cliente {
                 this.getHistorial();
         return cad;
     }
+    
+    public void aniadirHistorial(Compra compra, int codigo){
+        HashMap<Integer,Compra> historial_viejo = this.getHistorial();
+        historial_viejo.put(codigo, compra);
+        this.setHistorial(historial_viejo);
+        
+    }
 }
