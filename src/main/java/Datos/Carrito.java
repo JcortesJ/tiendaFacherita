@@ -8,7 +8,7 @@ public class Carrito {
     
     private int cantidad;
     private Cliente user;
-    private HashMap<String, Integer> bolsa;
+    private HashMap<Producto, Integer> bolsa;
     
 
     public int getCantidad() {
@@ -27,21 +27,21 @@ public class Carrito {
         this.user = user;
     }
 
-    public HashMap<String, Integer> getBolsa() {
+    public HashMap<Producto, Integer> getBolsa() {
         return this.bolsa;
     }
 
-    public void setBolsa(HashMap<String,Integer> bolsa) {
+    public void setBolsa(HashMap<Producto,Integer> bolsa) {
         this.bolsa = bolsa;
     }
 
    
   
     public Carrito(){
-        this(0,new Cliente(),new HashMap<String, Integer>());
+        this(0,new Cliente(),new HashMap<Producto, Integer>());
     }
     
-    public Carrito(int cantidad, Cliente user, HashMap<String,Integer> bolsa){
+    public Carrito(int cantidad, Cliente user, HashMap<Producto,Integer> bolsa){
         this.cantidad = cantidad;
         this.user = user;
         this.bolsa = bolsa;

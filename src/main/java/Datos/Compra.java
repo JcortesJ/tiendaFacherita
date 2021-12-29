@@ -49,8 +49,7 @@ public class Compra {
         this.comprador = comprador;
     }
 
-    public Compra() {
-        
+    public Compra() {       
        this(0,"Desconocida", "-----", new Cliente());
     }
     
