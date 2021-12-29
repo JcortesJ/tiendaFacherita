@@ -11,6 +11,7 @@ import java.util.Scanner;
 import Datos.Textil.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class pruebas {
     
@@ -193,27 +194,47 @@ public class pruebas {
                         + "para ir a un tipo de producto en específico ||");
                 System.out.println(" 1. Medicamento\n 2. Aseo");
             } else if(seccion == 4){
+                
                 System.out.println(" ".repeat(7) + "/// BUSQUEDA \\\\\\");
                 System.out.print("|| Ingrese el nombre del producto: ||");
             }else if(seccion == 5){
-                System.out.println(" ".repeat(7) + "/// CARRITO DE COMPRAS \\\\\\");
-                System.out.print(carritoCompra);
-                System.out.println(" 1. Terminar compra\n 2. Eliminar producto\n 0. Volver");
-            }else if(seccion != 0){
+                
+                
+              int seccionX = 1;
+               System.out.println("---------------------------------------");
+               System.out.println("BIENVENIDO AL CARRITO DE COMPRA"+ cliente_actual.getNombre());
+               System.out.println("Estos son los articulos que has seleccionado: ");
+              while(seccionX!=0){
+                   
+          
+                Set<Producto> llaves = carrito_actual.getBolsa().keySet();
+                for(Producto p: llaves){
+                    System.out.println("Nombre item: " + p.getNombre() + " Cantidad: "+ carrito_actual.getBolsa().get(p));
+                }
+                System.out.println("Eliminar item (2) Comprar (3) volver (0)");
+                
+                seccionX = sc.nextInt();
+                if(seccionX==2){
+                    System.out.println("Escribe el nombre del item a borrar");
+                    Scanner sc_ = new Scanner(System.in);
+                    String elimina = sc_.nextLine();
+                    transaccion.EliminarCarro(elimina);
+                    
+                }
+                if( seccionX==3){
+                   transaccion.Comprar(cliente_actual, carrito_actual);
+                }
+              }
+                
+            }
+            else if(seccion != 0){
                 System.out.println(" ".repeat(30) + "---------- OPCIÓN NO DISPONIBLE --------------");
             }
             
-             if(seccion==4){
-                //poner algoritmo de busqueda aqui
-            }
+           
             
-            if(seccion==5){
-                System.out.println("---------------------------------------");
-                System.out.println("BIENVENIDO AL CARRITO DE COMPRA"+ cliente_actual.getNombre());
-                System.out.println("Estos son los articulos que has seleccionado: ");
-                cliente_actual.ge
-                for()
-            }
+               
+            
             
            
         }
