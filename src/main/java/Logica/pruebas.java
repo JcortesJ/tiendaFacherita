@@ -2,6 +2,9 @@
 package Logica;
 
 import Datos.Producto;
+import Datos.comestibles.*;
+import Datos.farmacia.*;
+import Datos.Textil.*;
 import UI.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,14 +15,9 @@ import java.util.Map;
 public class pruebas {
     
     public static void main(String[] arqs){
-
-        ArrayList<Chaqueta> chaquetas = new ArrayList<Chaqueta>();
-        Chaqueta chaquetaRoja = new Chaqueta("Ninguno",true,"de invierno","ffbacad",12,"1 año",43242,"Chaqueta Roja de invierno","Kenzo",190000,"Chaqueta de iniverno color rojo importada");
-        Chaqueta chaquetaCuero = new Chaqueta("Capota",false,"de cuero","tgs353",6,"1 mes",43242,"Chaqueta negra de cuero","Colpub",300000,"Chaqueta de cuero color negra nacional");
-        Chaqueta chaquetaLana = new Chaqueta("Bolsillos ocultos",false,"de lana","vsdgfs453",9,"Sin garantía",43242,"Chaqueta blanca de lana","Louvc",150000,"Chaqueta de lana color blanca estampada");
-        chaquetas.add(chaquetaLana);
-        chaquetas.add(chaquetaCuero);
-        chaquetas.add(chaquetaRoja);
+        ArrayList<Cerveza> cervezas = Instancias.cervezas;
+        Transacciones transaccion = new Transacciones();
+        
         Scanner sc = new Scanner(System.in);
         Map<Producto, Integer> carritoCompra = new HashMap<Producto, Integer>();
         int seccion = 1;
@@ -48,26 +46,26 @@ public class pruebas {
                             int seccion4 =1;
                             if(seccion3 == 1){
                                 System.out.println(" ".repeat(30) + "/// CERVEZAS DISPONIBLES \\\\\\");
-                                for (int i=0;i<chaquetas.size();i++){
-                                    System.out.println(" "+ (i+1) +"."+ chaquetas.get(i).getNombre());
+                                for (int i=0;i<cervezas.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ cervezas.get(i).getNombre());
                                 }
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 > chaquetas.size()){
+                                while (seccion4 > cervezas.size()){
                                     System.out.println("Producto no válido, vuelvalo a intentar:");
                                     seccion4 = sc.nextInt();
                                 }
                                 int seccion5 = 1;
                                 while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
-                                    System.out.println(chaquetas.get(seccion4-1).toString());
+                                    System.out.println(cervezas.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
                                     seccion5 = sc.nextInt();
                                     if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
-                                        carritoCompra.put(chaquetas.get(seccion4-1),cantidadProducto);
+                                        transaccion.AniadirCarro(cervezas.get(seccion4-1),cantidadProducto);
                                         seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
