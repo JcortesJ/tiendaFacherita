@@ -1,6 +1,7 @@
 
 package Logica;
 //import java.util.ArrayList;
+import Datos.Producto;
 import Datos.comestibles.*;
 import Datos.Textil.*;
 import Datos.farmacia.*;
@@ -134,4 +135,28 @@ public class Instancias {
     ArrayList<Sombrero> sombreros = new ArrayList<>(Arrays.asList(sombreroVueltiao,sombreroFemenino,sombreroLlanero));
     ArrayList<Morral> morrales = new ArrayList<>(Arrays.asList(morralInfantil,morralAdulto,morralViajero));
 
+    
+    ArrayList<Producto> todosProductos = new ArrayList();
+    
+    public void CrearMegaArreglo(){
+        
+        todosProductos.addAll(productosAseo);
+        todosProductos.addAll(productosHogar);
+        todosProductos.addAll(productosNaturales);
+        todosProductos.addAll(productosPersonales);
+        todosProductos.addAll(productosSinteticos);
+        todosProductos.addAll(medicamentos);
+        todosProductos.addAll(cervezas);
+        todosProductos.addAll(bebidasCalientes);
+        todosProductos.addAll(carnes);
+        todosProductos.addAll(bebidasLacteas);
+        todosProductos.addAll(chaquetas);
+        todosProductos.addAll(tulas);
+        todosProductos.addAll(sombreros);
+        todosProductos.addAll(morrales);
+ 
+        
+        
+    }
+    
 }
