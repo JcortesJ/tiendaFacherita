@@ -84,29 +84,40 @@ public class pruebas {
                                     }
                                 }   
                             }else if(seccion3 == 2){
-                                System.out.println(" ".repeat(30) + "/// BEBIDAS CLIENTES DISPONIBLES \\\\\\");
+                                System.out.println(" ".repeat(30) + "/// BEBIDAS CALIENTES DISPONIBLES \\\\\\");
                                 for (int i=0;i<calientes.size();i++){
                                     System.out.println(" "+ (i+1) +"."+ calientes.get(i).getNombre());
                                 }
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 != 0){
+                                int seccion5 = 1; 
+                                if(seccion4 == 0){
+                                    seccion5 = 0;
+                                }
+                                
+                                while (seccion4 > calientes.size() || seccion4<0){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
                                     System.out.println(calientes.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
-                                    if(seccion4 == 1){
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
-                                        transaccion.AniadirCarro(calientes.get(seccion4-1), cantidadProducto);
+                                        transaccion.AniadirCarro(calientes.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
-                                }   
+                                }     
                             }else if(seccion3 != 0){
                                 System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                             }
@@ -115,66 +126,81 @@ public class pruebas {
                         while(seccion3 != 0){
                             System.out.println(" ".repeat(30) + "/// REFRIGERADOS \\\\\\");
                             System.out.println("|| Por favor selecciona una de las siguientes opciones"
-                            + " para ir a un tipo de refrigerado en específico ||");
-                            System.out.println(" 1. Carnes\n 2. Lácteos \n 0. Volver");
+                            + " para ir a un tipo de refrigeraod en específico ||");
+                            System.out.println(" 1. Carnes\n 2. Lacteos \n 0. Volver");
                             System.out.println("Ingrese la opción que desea:");
                             seccion3 = sc.nextInt();
                             int seccion4 =1;
                             if(seccion3 == 1){
                                 System.out.println(" ".repeat(30) + "/// CARNES DISPONIBLES \\\\\\");
-                                for (int i=0;i<chaquetas.size();i++){
-                                    System.out.println(" "+ (i+1) +"."+ chaquetas.get(i).getNombre());
+                                for (int i=0;i<carnes.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ carnes.get(i).getNombre());
                                 }
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 > chaquetas.size()){
+                                int seccion5 = 1; 
+                                if(seccion4 == 0){
+                                    seccion5 = 0;
+                                }
+                                
+                                while (seccion4 > carnes.size() || seccion4<0){
                                     System.out.println("Producto no válido, vuelvalo a intentar:");
                                     seccion4 = sc.nextInt();
                                 }
-                                int seccion5 = 1;
                                 while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
-                                    System.out.println(chaquetas.get(seccion4-1).toString());
+                                    System.out.println(carnes.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
                                     seccion5 = sc.nextInt();
                                     if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
-                                        carritoCompra.put(chaquetas.get(seccion4-1),cantidadProducto);
+                                        transaccion.AniadirCarro(carnes.get(seccion4-1),cantidadProducto);
                                         seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
                                 }   
                             }else if(seccion3 == 2){
                                 System.out.println(" ".repeat(30) + "/// LACTEOS DISPONIBLES \\\\\\");
-                                for (int i=0;i<chaquetas.size();i++){
-                                    System.out.println(" "+ (i+1) +"."+ chaquetas.get(i).getNombre());
+                                for (int i=0;i<lacteos.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ lacteos.get(i).getNombre());
                                 }
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 != 0){
+                                int seccion5 = 1; 
+                                if(seccion4 == 0){
+                                    seccion5 = 0;
+                                }
+                                
+                                while (seccion4 > lacteos.size() || seccion4<0){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
-                                    System.out.println(chaquetas.get(seccion4-1).toString());
+                                    System.out.println(lacteos.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
-                                    if(seccion4 == 1){
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
-                                        carritoCompra.put(chaquetas.get(seccion4-1),cantidadProducto);
+                                        transaccion.AniadirCarro(lacteos.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
-                                }   
+                                }     
                             }else if(seccion3 != 0){
                                 System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                             }
