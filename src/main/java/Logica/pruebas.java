@@ -1,7 +1,7 @@
 
 package Logica;
 
-import Datos.Producto;
+import Datos.*;
 import Datos.comestibles.*;
 import Datos.farmacia.*;
 import Datos.Textil.*;
@@ -11,8 +11,12 @@ import java.util.Scanner;
 import Datos.Textil.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class pruebas {
+    
+    static Cliente cliente_actual = new Cliente(24344, "Pepito flores", (float) 104.000, new HashMap<Integer,Compra>());
+    static Carrito carrito_actual = new Carrito(0, cliente_actual, new HashMap<Producto,Integer>());
     
     public static void main(String[] arqs){
         ArrayList<Chaqueta> chaquetas = Instancias.chaquetas;
@@ -215,7 +219,13 @@ public class pruebas {
                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                     }
                 }
+                
+                
+                
             } else if(seccion == 2){
+                
+                //farmacia
+
                 while (seccion2 != 0){
                     System.out.println(" ".repeat(30) + "/// SECCIÓN TEXTILES \\\\\\");
                     System.out.println("|| Por favor selecciona una de las siguientes opciones"
@@ -364,12 +374,190 @@ public class pruebas {
                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                     }
                 }
-            } else if(seccion == 3){
-                System.out.println(" ".repeat(30) + "/// SECCIÓN FARMACIA \\\\\\");
+
+            }
+            
+            else if(seccion == 3){
+                int seccionL=1;
+                while(seccionL !=0){
+                    
+                    System.out.println(" ".repeat(30) + "/// SECCIÓN FARMACIA \\\\\\");
                 System.out.println("|| Por favor selecciona una de las siguientes opciones"
                         + "para ir a un tipo de producto en específico ||");
-                System.out.println(" 1. Medicamento\n 2. Aseo");
+                System.out.println(" 1. Medicamentos y Sinteticos \n 2. Aseo y Personales \n 3. Naturales \n 0. Volver");
+                
+                int seccionY= sc.nextInt();
+                if(seccionY==0) seccionL=0;
+                while(seccionY!=0){
+                    if(seccionY==1){ //Medicamentos y sinteticos
+                        System.out.println(" Lista de Articulos Medicamentos/Sinteticos, selecciona uno a continuacion y 0. para volver ");
+                        for(int i=0;i<6;i++){
+                            if(i<3){
+                                 System.out.println(i+1 +". "+ Instancias.medicamentos.get(i).getNombre());
+                            }
+                       
+                            if(i>=3){
+                              System.out.println(i+1 +". "+ Instancias.productosSinteticos.get(i-3).getNombre());  
+                            }
+                        } 
+                       
+                         int seccionZ= sc.nextInt();
+                        if(seccionZ==0) seccionY=0;
+                        while(seccionZ !=0){
+                            int escogido = seccionZ-1;
+                            System.out.println("1. comprar 0. volver 2.Descripcion");
+                             seccionZ= sc.nextInt();
+                            if(seccionZ==1){ //comprando
+                                
+                               if(escogido<3){
+                                   //buscar en medicamentos
+                                   System.out.println("Cuantos vas a llevar?");
+                                   int numero = sc.nextInt();
+                                   transaccion.AniadirCarro(Instancias.medicamentos.get(escogido), numero);
+                                   seccionZ=0;
+                                   
+                            }
+                               else{
+                                   escogido-=3;
+                                   //buscar sinteticos
+                                   System.out.println("Cuantos vas a llevar?");
+                                   int numero = sc.nextInt();
+                                   transaccion.AniadirCarro(Instancias.productosSinteticos.get(escogido), numero);
+                                   seccionZ=0;
+                               }
+                                
+                            }
+                            
+                            if(seccionZ==2){ //descripcion del objeto
+                                   if(escogido<3){
+                                   // medicamentos
+                                   System.out.println(Instancias.medicamentos.get(escogido));
+                                   System.out.println("0. volver ");
+                                   seccionZ= sc.nextInt();
+                                   
+                                  
+                                   
+                            }
+                               else{
+                                   //sinteticos
+                                    escogido-=3;
+                                   System.out.println(Instancias.productosSinteticos.get(escogido));
+                                   System.out.println("0. volver ");
+                                   seccionZ= sc.nextInt();
+                               }
+                            }
+                            
+                        }
+                    }
+                    
+                    if(seccionY==2){ //Aseo y Personales
+                         System.out.println(" Lista de Articulos Aseo/Personales, selecciona uno a continuacion y 0. para volver ");
+                        for(int i=0;i<6;i++){
+                            if(i<3){
+                                 System.out.println(i+1 +". "+ Instancias.productosAseo.get(i).getNombre());
+                            }
+                       
+                            if(i>=3){
+                              System.out.println(i+1 +". "+ Instancias.productosPersonales.get(i-3).getNombre());  
+                            }
+                        } 
+                       
+                         int seccionZ= sc.nextInt();
+                        if(seccionZ==0) seccionY=0;
+                        while(seccionZ !=0){
+                            int escogido = seccionZ-1;
+                            System.out.println("1. comprar 0. volver 2.Descripcion");
+                             seccionZ= sc.nextInt();
+                            if(seccionZ==1){ //comprando
+                                
+                               if(escogido<3){
+                                   //buscar en medicamentos
+                                   System.out.println("Cuantos vas a llevar?");
+                                   int numero = sc.nextInt();
+                                   transaccion.AniadirCarro(Instancias.productosAseo.get(escogido), numero);
+                                   seccionZ=0;
+                                   
+                            }
+                               else{
+                                   escogido-=3;
+                                   //buscar sinteticos
+                                   System.out.println("Cuantos vas a llevar?");
+                                   int numero = sc.nextInt();
+                                   transaccion.AniadirCarro(Instancias.productosPersonales.get(escogido), numero);
+                                   seccionZ=0;
+                               }
+                                
+                            }
+                            
+                            if(seccionZ==2){ //descripcion del objeto
+                                   if(escogido<3){
+                                   // medicamentos
+                                   System.out.println(Instancias.productosAseo.get(escogido));
+                                   System.out.println("0. volver ");
+                                   seccionZ= sc.nextInt();
+                                   
+                                  
+                                   
+                            }
+                               else{
+                                   //sinteticos
+                                    escogido-=3;
+                                   System.out.println(Instancias.productosPersonales.get(escogido));
+                                   System.out.println("0. volver ");
+                                   seccionZ= sc.nextInt();
+                               }
+                            }
+                            
+                        }
+                    }
+                    
+                    if(seccionY==3){ //Naturales
+                          System.out.println(" Lista de Articulos Naturales, selecciona uno a continuacion y 0. para volver ");
+                        for(int i=0;i<3;i++){
+                           
+                                 System.out.println(i+1 +". "+ Instancias.productosNaturales.get(i).getNombre());
+                          
+                        } 
+                       
+                         int seccionZ= sc.nextInt();
+                        if(seccionZ==0) seccionY=0;
+                        while(seccionZ !=0){
+                            int escogido = seccionZ-1;
+                            System.out.println("1. comprar 0. volver 2.Descripcion");
+                             seccionZ= sc.nextInt();
+                            if(seccionZ==1){ //comprando
+                                
+                             
+                                   //buscar en Naturales
+                                   System.out.println("Cuantos vas a llevar?");
+                                   int numero = sc.nextInt();
+                                   transaccion.AniadirCarro(Instancias.productosNaturales.get(escogido), numero);
+                                   seccionZ=0;
+                     
+                            }
+                            
+                            if(seccionZ==2){ //descripcion del objeto
+                                   
+                                   System.out.println(Instancias.productosNaturales.get(escogido));
+                                   System.out.println("0. volver ");
+                                   seccionZ= sc.nextInt();
+                
+                            }
+                            
+                        }
+                    }
+                
+                }
+                
+                    
+                }
+                
+                
             } else if(seccion == 4){
+                
+                System.out.println(" ".repeat(7) + "/// BUSQUEDA \\\\\\");
+                System.out.print("|| Ingrese el nombre del producto: ||");
+
                 int seleccionado = 1;
                 while(seleccionado != 0){
                     System.out.println(" ".repeat(7) + "/// BUSQUEDA \\\\\\");
@@ -403,13 +591,47 @@ public class pruebas {
                         }
                     }
                 }
+
             }else if(seccion == 5){
-                System.out.println(" ".repeat(7) + "/// CARRITO DE COMPRAS \\\\\\");
-                System.out.print(carritoCompra);
-                System.out.println(" 1. Terminar compra\n 2. Eliminar producto\n 0. Volver");
-            }else if(seccion != 0){
+                
+                
+              int seccionX = 1;
+               System.out.println("---------------------------------------");
+               System.out.println("BIENVENIDO AL CARRITO DE COMPRA"+ cliente_actual.getNombre());
+               System.out.println("Estos son los articulos que has seleccionado: ");
+              while(seccionX!=0){
+                   
+          
+                Set<Producto> llaves = carrito_actual.getBolsa().keySet();
+                for(Producto p: llaves){
+                    System.out.println("Nombre item: " + p.getNombre() + " Cantidad: "+ carrito_actual.getBolsa().get(p));
+                }
+                System.out.println("Eliminar item (2) Comprar (3) volver (0)");
+                
+                seccionX = sc.nextInt();
+                if(seccionX==2){
+                    System.out.println("Escribe el nombre del item a borrar");
+                    Scanner sc_ = new Scanner(System.in);
+                    String elimina = sc_.nextLine();
+                    transaccion.EliminarCarro(elimina);
+                    
+                }
+                if( seccionX==3){
+                   transaccion.Comprar(cliente_actual, carrito_actual);
+                }
+              }
+                
+            }
+            else if(seccion != 0){
                 System.out.println(" ".repeat(30) + "---------- OPCIÓN NO DISPONIBLE --------------");
             }
+            
+           
+            
+               
+            
+            
+           
         }
         System.out.println(" ".repeat(18) + "/// GRACIAS POR USAR NUESTROS SERVICIOS \\\\\\");
 
