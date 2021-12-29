@@ -15,6 +15,10 @@ import java.util.Map;
 public class pruebas {
     
     public static void main(String[] arqs){
+        ArrayList<Chaqueta> chaquetas = Instancias.chaquetas;
+        ArrayList<Sombrero> sombreros = Instancias.sombreros;
+        ArrayList<Morral> morrales = Instancias.morrales;
+        ArrayList<Tula> tulas = Instancias.tulas;
         ArrayList<Cerveza> cervezas = Instancias.cervezas;
         ArrayList<Calientes> calientes = Instancias.bebidasCalientes;
         ArrayList<Carne> carnes = Instancias.carnes;
@@ -212,7 +216,154 @@ public class pruebas {
                     }
                 }
             } else if(seccion == 2){
-                //hola
+                while (seccion2 != 0){
+                    System.out.println(" ".repeat(30) + "/// SECCIÓN TEXTILES \\\\\\");
+                    System.out.println("|| Por favor selecciona una de las siguientes opciones"
+                            + " para ir a un tipo de textil en específico ||");
+                    System.out.println(" 1. Ropa \n 2. Maletines \n 0. Volver");
+                    System.out.println("Ingrese la opción que desea:");
+                    seccion2 = sc.nextInt();
+                    int seccion3 = 1;
+                    if(seccion2 == 1){
+                        while(seccion3 != 0){
+                            System.out.println(" ".repeat(30) + "/// ROPA \\\\\\");
+                            System.out.println("|| Por favor selecciona una de las siguientes opciones"
+                            + " para ir a un tipo de bebida en específico ||");
+                            System.out.println(" 1. Chaquetas\n 2. SOmbreros\n 0. Volver");
+                            System.out.println("Ingrese la opción que desea:");
+                            seccion3 = sc.nextInt();
+                            int seccion4 =1;
+                            if(seccion3 == 1){
+                                System.out.println(" ".repeat(30) + "/// CHAQUETAS DISPONIBLES \\\\\\");
+                                for (int i=0;i<cervezas.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ chaquetas.get(i).getNombre());
+                                }
+                                System.out.println(" 0. Volver");
+                                System.out.println("Ingrese el producto que desea detallar:");
+                                seccion4 = sc.nextInt();
+                                while (seccion4 > chaquetas.size()){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                int seccion5 = 1;
+                                while (seccion5 != 0){
+                                    System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
+                                    System.out.println(chaquetas.get(seccion4-1).toString());
+                                    System.out.println(" 1. Comprar\n 0. Volver");
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
+                                        System.out.println("Ingrese la cantidad del producto que quiere comprar:");
+                                        int cantidadProducto = sc.nextInt();
+                                        transaccion.AniadirCarro(chaquetas.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
+                                        seccion4=0;
+                                        seccion3=0;
+                                        seccion2=0;
+                                        System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
+                                    }else if (seccion5 != 0){
+                                        System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                                    }
+                                }   
+                            }else if(seccion3 == 2){
+                                System.out.println(" ".repeat(30) + "/// SOMBREROS DISPONIBLES \\\\\\");
+                                for (int i=0;i<sombreros.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ sombreros.get(i).getNombre());
+                                }
+                                System.out.println(" 0. Volver");
+                                System.out.println("Ingrese el producto que desea detallar:");
+                                seccion4 = sc.nextInt();
+                                while (seccion4 != 0){
+                                    System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
+                                    System.out.println(sombreros.get(seccion4-1).toString());
+                                    System.out.println(" 1. Comprar\n 0. Volver");
+                                    if(seccion4 == 1){
+                                        System.out.println("Ingrese la cantidad del producto que quiere comprar:");
+                                        int cantidadProducto = sc.nextInt();
+                                        transaccion.AniadirCarro(sombreros.get(seccion4-1),cantidadProducto);
+                                        seccion4=0;
+                                        seccion3=0;
+                                        seccion2=0;
+                                        System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
+                                    }else if (seccion4 != 0){
+                                        System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                                    }
+                                }   
+                            }else if(seccion3 != 0){
+                                System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                            }
+                        }
+                    }else if(seccion2 == 2){
+                        while(seccion3 != 0){
+                            System.out.println(" ".repeat(30) + "/// MALETINES \\\\\\");
+                            System.out.println("|| Por favor selecciona una de las siguientes opciones"
+                            + " para ir a un tipo de refrigerado en específico ||");
+                            System.out.println(" 1. Morrales\n 2. Tulas\n 0. Volver");
+                            System.out.println("Ingrese la opción que desea:");
+                            seccion3 = sc.nextInt();
+                            int seccion4 =1;
+                            if(seccion3 == 1){
+                                System.out.println(" ".repeat(30) + "/// MORRALES DISPONIBLES \\\\\\");
+                                for (int i=0;i<chaquetas.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ morrales.get(i).getNombre());
+                                }
+                                System.out.println(" 0. Volver");
+                                System.out.println("Ingrese el producto que desea detallar:");
+                                seccion4 = sc.nextInt();
+                                while (seccion4 > morrales.size()){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                int seccion5 = 1;
+                                while (seccion5 != 0){
+                                    System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
+                                    System.out.println(morrales.get(seccion4-1).toString());
+                                    System.out.println(" 1. Comprar\n 0. Volver");
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
+                                        System.out.println("Ingrese la cantidad del producto que quiere comprar:");
+                                        int cantidadProducto = sc.nextInt();
+                                        transaccion.AniadirCarro(morrales.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
+                                        seccion4=0;
+                                        seccion3=0;
+                                        seccion2=0;
+                                        System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
+                                    }else if (seccion5 != 0){
+                                        System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                                    }
+                                }   
+                            }else if(seccion3 == 2){
+                                System.out.println(" ".repeat(30) + "/// TULAS DISPONIBLES \\\\\\");
+                                for (int i=0;i<tulas.size();i++){
+                                    System.out.println(" "+ (i+1) +"."+ tulas.get(i).getNombre());
+                                }
+                                System.out.println(" 0. Volver");
+                                System.out.println("Ingrese el producto que desea detallar:");
+                                seccion4 = sc.nextInt();
+                                while (seccion4 != 0){
+                                    System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
+                                    System.out.println(tulas.get(seccion4-1).toString());
+                                    System.out.println(" 1. Comprar\n 0. Volver");
+                                    if(seccion4 == 1){
+                                        System.out.println("Ingrese la cantidad del producto que quiere comprar:");
+                                        int cantidadProducto = sc.nextInt();
+                                        transaccion.AniadirCarro(tulas.get(seccion4-1),cantidadProducto);
+                                        seccion4=0;
+                                        seccion3=0;
+                                        seccion2=0;
+                                        System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
+                                    }else if (seccion4 != 0){
+                                        System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                                    }
+                                }   
+                            }else if(seccion3 != 0){
+                                System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                            }
+                        }
+                    }else if(seccion2 != 0){
+                        System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
+                    }
+                }
             } else if(seccion == 3){
                 System.out.println(" ".repeat(30) + "/// SECCIÓN FARMACIA \\\\\\");
                 System.out.println("|| Por favor selecciona una de las siguientes opciones"
@@ -232,10 +383,11 @@ public class pruebas {
                     }
                     System.out.println("0. Salir\n");
                     
-                    seleccionado = sc.nextInt();
+                    
                     int seccion3 = 1;
                     while(seccion3 != 0 && seleccionado > 0){
-                        System.out.print("Por favor escriba el número del producto del cual quiere más información: ");
+                        System.out.print("Por favor escriba el número del producto del cual quiere más información: \n");
+                        seleccionado = sc.nextInt();
                         System.out.println(productos.get(seleccionado-1).toString());
                         System.out.println(" 1. Comprar\n 0. Volver");
                         int accion = sc.nextInt();
