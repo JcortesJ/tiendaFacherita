@@ -50,7 +50,7 @@ public class Compra {
     }
 
     public Compra() {       
-       this(0,"Desconocida", "-----", new Cliente());
+       this(0," Compra Fallida", " La compra ha sido rechazada por: \n 1. Dinero insuficiente \n 2. Stock insuficiente ", new Cliente());
     }
     
     
