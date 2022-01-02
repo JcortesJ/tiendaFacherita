@@ -107,7 +107,7 @@ public class Transacciones {
     }
     
     public String  crearFecha(){
-         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy/MM/dd");  
+         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
          LocalDateTime now = LocalDateTime.now();  
          return formatoFecha.format(now);
     }
