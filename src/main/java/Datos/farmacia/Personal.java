@@ -66,7 +66,7 @@ final public class Personal extends Farmacia {
       float presio_final = super.getPrecio();
         if(this.isUnisex()==false){
             presio_final *= 1.05;
-            super.setPrecio(presio_final);//el precio subirá un 5%
+          //  super.setPrecio(presio_final);//el precio subirá un 5%
         }
       
        return presio_final*cantidad;
@@ -77,7 +77,7 @@ final public class Personal extends Farmacia {
         float presio_final = super.getPrecio();
         if(cantidad>5){
             presio_final *= .97;
-            super.setPrecio(presio_final);//el precio tendrá un descuento del 3%
+         //  super.setPrecio(presio_final);//el precio tendrá un descuento del 3%
         }
       
        return presio_final*cantidad;

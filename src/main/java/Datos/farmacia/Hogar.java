@@ -74,12 +74,12 @@ final public class Hogar extends Farmacia {
         if(this.isQuimico() && cantidad>2){
            
             presio_final *= 1.50; //aumenta un 150%
-            super.setPrecio(presio_final);
+           // super.setPrecio(presio_final);
             
         }
         else if(this.isBiodegradable() && this.isQuimico()==false){
             presio_final *= .75; //descuento del 25%
-            super.setPrecio(presio_final);
+           // super.setPrecio(presio_final);
         }
        
         return presio_final*cantidad;

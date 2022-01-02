@@ -72,7 +72,7 @@ final public class Naturales extends Farmacia {
        float presio_final = super.getPrecio();
         if(cantidad>2){
             presio_final *= .95;
-            super.setPrecio(presio_final);//el precio tendrá un descuento del 5%
+          // super.setPrecio(presio_final);//el precio tendrá un descuento del 5%
         }
       
        return presio_final*cantidad;

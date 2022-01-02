@@ -74,7 +74,7 @@ final public class Medicamento extends Farmacia {
        float presio_final = super.getPrecio();
         if(this.isGenerica()){
             presio_final *= .80;
-            super.setPrecio(presio_final);//el precio tendra descuento del 20%
+          //  super.setPrecio(presio_final);//el precio tendra descuento del 20%
         }
       
        return presio_final*cantidad;
@@ -85,7 +85,7 @@ final public class Medicamento extends Farmacia {
         float presio_final = super.getPrecio();
         if(cantidad>3){
             presio_final *= .90;
-            super.setPrecio(presio_final);//el precio tendra un descuento del 90%
+          //  super.setPrecio(presio_final);//el precio tendra un descuento del 90%
         }
       
        return presio_final*cantidad;
