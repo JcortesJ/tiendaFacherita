@@ -5,6 +5,8 @@ import Datos.*;
 import java.util.HashMap;
 import java.util.Set;
 import java.util.Random;
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;  
 
 public class Transacciones {
     
@@ -85,20 +87,28 @@ public class Transacciones {
         Compra generada = new Compra();
         float valor_compra = carrito.calcularCostoPedido();
         if(cliente.getDineroDisponible()<valor_compra){
-            System.out.println("Compra rechazada");
+            System.out.println("Compra rechazada No tienes dinero suficiente");
         }
         else{
             Random xd = new Random();
-            String factura = "\n"+" El cliente: " + cliente.getNombre() + "Ha gastado: " + valor_compra + "En: " + carrito.getBolsa().size() + " Objetos";
+            String factura = "\n"+" El cliente: " + cliente.getNombre() +"\n"  + "Ha gastado: " + valor_compra  +"\n" + "En: " + carrito.getBolsa().size() + "  Objeto(s)";
             System.out.println("Compra Exitosa");
             generada.setCodigo(xd.nextInt(1000));
             generada.setComprador(cliente);
             generada.setFactura(factura);
-            generada.setFecha("28/12/21");
+            generada.setFecha(crearFecha());
             System.out.println(factura);
             cliente.aniadirHistorial(generada, generada.getCodigo());
+            float dinero_real = cliente.getDineroDisponible() - valor_compra;
+            cliente.setDineroDisponible(dinero_real);
         
         }
         return generada;
+    }
+    
+    public String  crearFecha(){
+         DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+         LocalDateTime now = LocalDateTime.now();  
+         return formatoFecha.format(now);
     }
 }

@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import Datos.Textil.*;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class pruebas {
     
-    static Cliente cliente_actual = new Cliente(24344, "Pepito flores", (float) 104.000, new HashMap<Integer,Compra>());
+    static Cliente cliente_actual = new Cliente(24344, "Pepito flores", 150000f, new HashMap<Integer,Compra>());
     static Carrito carrito_actual = new Carrito(0, cliente_actual, new HashMap<Producto,Integer>());
     
     public static void main(String[] arqs){
@@ -30,6 +31,9 @@ public class pruebas {
         ArrayList<Producto> productos = Instancias.CrearMegaArreglo(Instancias.todosProductos);
         
         Transacciones transaccion = new Transacciones();
+        transaccion.setCarrito_actual(carrito_actual);
+        transaccion.setCliente_actual(cliente_actual);
+        
         
         Scanner sc = new Scanner(System.in);
         Scanner sx = new Scanner(System.in);
@@ -597,7 +601,7 @@ public class pruebas {
                 
               int seccionX = 1;
                System.out.println("---------------------------------------");
-               System.out.println("BIENVENIDO AL CARRITO DE COMPRA"+ cliente_actual.getNombre());
+               System.out.println("BIENVENIDO AL CARRITO DE COMPRA "+ cliente_actual.getNombre());
                System.out.println("Estos son los articulos que has seleccionado: ");
               while(seccionX!=0){
                    
@@ -606,7 +610,7 @@ public class pruebas {
                 for(Producto p: llaves){
                     System.out.println("Nombre item: " + p.getNombre() + " Cantidad: "+ carrito_actual.getBolsa().get(p));
                 }
-                System.out.println("Eliminar item (2) Comprar (3) volver (0)");
+                System.out.println("(1) Calcular costo compra \n (2) Eliminar item \n (3) Comprar \n  volver (0)");
                 
                 seccionX = sc.nextInt();
                 if(seccionX==2){
@@ -616,10 +620,69 @@ public class pruebas {
                     transaccion.EliminarCarro(elimina);
                     
                 }
+                
+                 if(seccionX==1){
+                    System.out.println("En este momento tienes: ");
+                     System.out.println(cliente_actual.getDineroDisponible() + " Pesos");
+                     System.out.println("Tu compra tiene un valor de: ");
+                     System.out.println(carrito_actual.calcularCostoPedido() + " Pesos");
+                    
+                    
+                }
                 if( seccionX==3){
-                   transaccion.Comprar(cliente_actual, carrito_actual);
+                   Compra compra_generada = new Compra();
+                   compra_generada = transaccion.Comprar(cliente_actual, carrito_actual);
+                   cliente_actual.aniadirHistorial(compra_generada, compra_generada.getCodigo());
+                   carrito_actual.setBolsa(new HashMap<Producto,Integer>());
+                   seccionX=0;
                 }
               }
+                
+            }
+            
+            else if(seccion == 6){
+                
+                
+              int seccionX = 1;
+               System.out.println("---------------------------------------");
+               System.out.println("BIENVENIDO A Informacion del cliente "+ cliente_actual.getNombre());
+               System.out.println("Este es su historial de compras: ");
+              //while(seccionX!=0){
+                  HashMap<Integer,Compra> historial_actual = cliente_actual.getHistorial();
+                   
+          
+                Set<Integer> llaves = historial_actual.keySet();
+                for(int p: llaves){
+                    System.out.println("Codigo: " + p + " Compra: "+ historial_actual.get(p));
+                }
+               
+                
+                //seccionX = sc.nextInt();
+                /*
+                if(seccionX==2){
+                    System.out.println("Escribe el nombre del item a borrar");
+                    Scanner sc_ = new Scanner(System.in);
+                    String elimina = sc_.nextLine();
+                    transaccion.EliminarCarro(elimina);
+                    
+                }
+                
+                 if(seccionX==1){
+                    System.out.println("En este momento tienes: ");
+                     System.out.println(cliente_actual.getDineroDisponible() + " Pesos");
+                     System.out.println("Tu compra tiene un valor de: ");
+                     System.out.println(carrito_actual.calcularCostoPedido() + " Pesos");
+                    
+                    
+                }
+                if( seccionX==3){
+                   Compra compra_generada = new Compra();
+                   compra_generada = transaccion.Comprar(cliente_actual, carrito_actual);
+                   cliente_actual.aniadirHistorial(compra_generada, compra_generada.getCodigo());
+                }
+                */
+              //}
+                
                 
             }
             else if(seccion != 0){
@@ -664,7 +727,7 @@ public class pruebas {
         System.out.println(" ".repeat(18) + "/// BIENVENID@ A LA TIENDA ECOMUN \\\\\\");
         System.out.println("|| Por favor selecciona una de las siguientes opciones"
                 + " para ir a una sección en el catálogo ||");
-        System.out.println(" 1. Comestibles\n 2. Textiles\n 3. Farmacia\n 4. Buscar\n 5. Carrito de compra \n 0. Salir");
+        System.out.println(" 1. Comestibles\n 2. Textiles\n 3. Farmacia\n 4. Buscar\n 5. Carrito de compra \n 6.Historial de compras \n 0. Salir");
     }  
     
 }

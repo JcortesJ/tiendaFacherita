@@ -67,7 +67,7 @@ final public class Sinteticos extends Farmacia {
        float presio_final = super.getPrecio();
         if(this.isImportado()){
             presio_final *= 1.19;
-            super.setPrecio(presio_final);//el precio subirá un 19%
+        //    super.setPrecio(presio_final);//el precio subirá un 19%
         }
       
        return presio_final*cantidad;
@@ -78,12 +78,12 @@ final public class Sinteticos extends Farmacia {
         float presio_final = super.getPrecio();
         if(this.isImportado()==false && cantidad>3){
             presio_final *= 0.60;
-            super.setPrecio(presio_final);//el precio tendra un descuendo del 60%
+          //  super.setPrecio(presio_final);//el precio tendra un descuendo del 60%
         }
         
           if(this.isImportado()==false){
             presio_final *= 0.90;
-            super.setPrecio(presio_final);//el precio tendra un descuendo del 10%
+        //    super.setPrecio(presio_final);//el precio tendra un descuendo del 10%
         }
       
        return presio_final*cantidad;

@@ -66,7 +66,7 @@ final public class Aseo extends Farmacia {
          float presio_final = super.getPrecio();
         if(this.isCorrosivo() && cantidad>2){
             presio_final *= 1.20;
-            super.setPrecio(presio_final);//el precio subirá un 20%
+            //super.setPrecio(presio_final);//el precio subirá un 20%
         }
       
        return presio_final*cantidad;
