@@ -57,7 +57,7 @@ public class Compra {
 
     @Override
     public String toString() {
-        String generado = "fecha= " + this.getFecha() +"\n" + ", factura= " + this.getFactura()+"\n" +" comprador= " + this.getComprador().getNombre();
+        String generado = "fecha= " + this.getFecha() +"\n" + ", factura= " + this.getFactura()+"\n";
         return generado;
     }
     

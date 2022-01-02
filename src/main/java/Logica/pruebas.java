@@ -601,7 +601,7 @@ public class pruebas {
                 
               int seccionX = 1;
                System.out.println("---------------------------------------");
-               System.out.println("BIENVENIDO AL CARRITO DE COMPRA"+ cliente_actual.getNombre());
+               System.out.println("BIENVENIDO AL CARRITO DE COMPRA "+ cliente_actual.getNombre());
                System.out.println("Estos son los articulos que has seleccionado: ");
               while(seccionX!=0){
                    
@@ -633,6 +633,8 @@ public class pruebas {
                    Compra compra_generada = new Compra();
                    compra_generada = transaccion.Comprar(cliente_actual, carrito_actual);
                    cliente_actual.aniadirHistorial(compra_generada, compra_generada.getCodigo());
+                   carrito_actual.setBolsa(new HashMap<Producto,Integer>());
+                   seccionX=0;
                 }
               }
                 
@@ -643,7 +645,7 @@ public class pruebas {
                 
               int seccionX = 1;
                System.out.println("---------------------------------------");
-               System.out.println("BIENVENIDO A Informacion del cliente"+ cliente_actual.getNombre());
+               System.out.println("BIENVENIDO A Informacion del cliente "+ cliente_actual.getNombre());
                System.out.println("Este es su historial de compras: ");
               //while(seccionX!=0){
                   HashMap<Integer,Compra> historial_actual = cliente_actual.getHistorial();
@@ -653,7 +655,7 @@ public class pruebas {
                 for(int p: llaves){
                     System.out.println("Codigo: " + p + " Compra: "+ historial_actual.get(p));
                 }
-                System.out.println("(1) Calcular costo compra \n (2) Eliminar item \n (3) Comprar \n  volver (0)");
+               
                 
                 //seccionX = sc.nextInt();
                 /*
