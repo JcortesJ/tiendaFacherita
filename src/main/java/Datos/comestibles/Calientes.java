@@ -24,7 +24,7 @@ final public class Calientes extends Bebida{
         int pesoCantidad = Math.round(peso*cantidad);
         int cantidadBultos = (pesoCantidad - (pesoCantidad%10) ) /10;
         
-        System.out.println("Cantidad " + cantidadBultos);
+        //System.out.println("Cantidad " + cantidadBultos);
         float pesoSobrante = pesoCantidad%10;
         
         float total = 0;

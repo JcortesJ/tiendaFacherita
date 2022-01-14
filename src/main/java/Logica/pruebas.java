@@ -655,6 +655,9 @@ public class pruebas {
                 for(int p: llaves){
                     System.out.println("Codigo: " + p + " Compra: "+ historial_actual.get(p));
                 }
+                if(llaves.isEmpty()){
+                    System.out.println("Aún no has realizado ninguna compra");
+                }
                
                 
                 //seccionX = sc.nextInt();
