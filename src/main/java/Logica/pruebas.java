@@ -243,7 +243,7 @@ public class pruebas {
                             System.out.println(" ".repeat(30) + "/// ROPA \\\\\\");
                             System.out.println("|| Por favor selecciona una de las siguientes opciones"
                             + " para ir a un tipo de bebida en específico ||");
-                            System.out.println(" 1. Chaquetas\n 2. SOmbreros\n 0. Volver");
+                            System.out.println(" 1. Chaquetas\n 2. Sombreros\n 0. Volver");
                             System.out.println("Ingrese la opción que desea:");
                             seccion3 = sc.nextInt();
                             int seccion4 =1;
@@ -286,22 +286,29 @@ public class pruebas {
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 != 0){
+                                while (seccion4 > chaquetas.size()){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                int seccion5 = 1;
+                                while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
                                     System.out.println(sombreros.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
-                                    if(seccion4 == 1){
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
                                         transaccion.AniadirCarro(sombreros.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
-                                }   
+                                }    
                             }else if(seccion3 != 0){
                                 System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                             }
@@ -354,19 +361,26 @@ public class pruebas {
                                 System.out.println(" 0. Volver");
                                 System.out.println("Ingrese el producto que desea detallar:");
                                 seccion4 = sc.nextInt();
-                                while (seccion4 != 0){
+                                while (seccion4 > tulas.size()){
+                                    System.out.println("Producto no válido, vuelvalo a intentar:");
+                                    seccion4 = sc.nextInt();
+                                }
+                                int seccion5 = 1;
+                                while (seccion5 != 0){
                                     System.out.println(" ".repeat(30) + "/// DETALLES PRODUCTO \\\\\\");
                                     System.out.println(tulas.get(seccion4-1).toString());
                                     System.out.println(" 1. Comprar\n 0. Volver");
-                                    if(seccion4 == 1){
+                                    seccion5 = sc.nextInt();
+                                    if(seccion5 == 1){
                                         System.out.println("Ingrese la cantidad del producto que quiere comprar:");
                                         int cantidadProducto = sc.nextInt();
                                         transaccion.AniadirCarro(tulas.get(seccion4-1),cantidadProducto);
+                                        seccion5=0;
                                         seccion4=0;
                                         seccion3=0;
                                         seccion2=0;
                                         System.out.println(" ".repeat(30) + "/// PRODUCTO AGREGADO CON ÉXITO \\\\\\");
-                                    }else if (seccion4 != 0){
+                                    }else if (seccion5 != 0){
                                         System.out.println(" ".repeat(7) + "/// OPCIÓN NO DISPONIBLE \\\\\\");
                                     }
                                 }   
@@ -380,7 +394,6 @@ public class pruebas {
                 }
 
             }
-            
             else if(seccion == 3){
                 int seccionL=1;
                 while(seccionL !=0){

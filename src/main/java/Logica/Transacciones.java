@@ -87,7 +87,7 @@ public class Transacciones {
         Compra generada = new Compra();
         float valor_compra = carrito.calcularCostoPedido();
         if(cliente.getDineroDisponible()<valor_compra){
-            System.out.println("Compra rechazada No tienes dinero suficiente");
+            System.out.println("!!Compra rechazada No tienes dinero suficiente");
         }
         else{
             Random xd = new Random();
