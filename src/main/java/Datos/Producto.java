@@ -2,7 +2,7 @@
 package Datos;
 
 
-public class Producto {
+public abstract class  Producto {
     private int codigo;
     private String nombre;
     private String empresa;
@@ -82,8 +82,17 @@ public class Producto {
     
     @Override
     public String toString(){
-        String cad = "";
+        String presio = String.valueOf(this.getCodigo());
+        String cad = "Nombre del producto: " + this.getNombre() + "\n"
+                + "Codigo: " + presio+ "\n" + 
+                "Empresa productora: " + this.getEmpresa() + "\n" +
+                "Descripcion: "+ this.getDescripcion()+"\n"
+                + "Precio del producto: " + this.getPrecio()+"\n";
         return cad;
     }
     
+
+    public abstract float valorTotalProducto(int cantidad);
+    public abstract float promocion (int cantidad);
+
 }
